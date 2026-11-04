@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# Hyperspectral course — what stays out of the repository
+# ---------------------------------------------------------------------------
+
+# Tanager scenes: ~1 GB each. hsi_utils downloads them on demand from Planet's
+# public STAC catalogue, so they must never be committed.
+*.h5
+*.h5.part
+data/subsets/
+
+# Everything the notebooks regenerate
+outputs/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Instructor slide decks (46 MB) and the figures they are built from.
+# Both regenerate: python tools/extract_figures.py, then tools/decks/deck_*.py
+# Delete these two lines if you want the built decks in the repository.
+slides/*.pptx
+slides/figures/
+
+# Environments — never keep a virtualenv inside a synced folder
+.venv/
+venv/
+env/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp

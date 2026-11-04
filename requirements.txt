@@ -1,0 +1,40 @@
+# Space Academy 2026 — Hyperspectral course notebooks (10–31, exercises, app)
+# Python 3.9+   ·   pip install -r requirements.txt
+
+# core
+numpy
+scipy
+pandas
+h5py
+matplotlib
+requests>=2.32.4
+
+# geospatial
+rasterio
+xarray
+rioxarray
+geopandas
+shapely
+pyproj
+pystac
+pystac-client
+planetary-computer        # WorldCover labels / Sentinel-2 via Microsoft Planetary Computer
+
+# machine learning
+scikit-learn
+joblib                    # saving the trained model (notebook 31)
+torch                     # notebook 20 (CPU is enough; see pytorch.org for GPU builds)
+
+# notebooks
+jupyter
+ipykernel
+ipywidgets
+
+# optional
+hypercoast                # notebook 17: Tanager + EnMAP readers, interactive spectra (needs Python >= 3.11)
+leafmap                   # interactive maps (optional cells)
+localtileserver
+dask                      # notebooks 12 / 30 scaling sections
+streamlit                 # app/streamlit_app.py (notebook 31)
+pytest                    # tests/
+python-pptx               # only needed to rebuild the slide decks (tools/decks/)

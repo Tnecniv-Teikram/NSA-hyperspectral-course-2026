@@ -1,0 +1,258 @@
+{
+  "source": "Tanager STAC Data, available at www.planet.com/data/stac \u00a9 2025 Planet Labs PBC. CC-BY-4.0",
+  "labels": "ESA WorldCover 2021 v200 (CC-BY 4.0) purity = 9/9",
+  "entries": [
+    {
+      "name": "mangrove",
+      "scene_id": "20250223_165546_32_4001",
+      "place": "Usulut\u00e1n, El Salvador",
+      "description": "Dense mangrove forest, Jiquilisco Bay, El Salvador",
+      "worldcover_classes": [
+        95
+      ],
+      "n_pixels_available": 86524,
+      "n_pixels_used": 400,
+      "median_lon": -88.44035,
+      "median_lat": 13.22761
+    },
+    {
+      "name": "tropical_tree_cover",
+      "scene_id": "20250223_165546_32_4001",
+      "place": "Usulut\u00e1n, El Salvador",
+      "description": "Tropical tree cover inland of the mangroves, El Salvador",
+      "worldcover_classes": [
+        10
+      ],
+      "n_pixels_available": 35744,
+      "n_pixels_used": 400,
+      "median_lon": -88.40737,
+      "median_lat": 13.26847
+    },
+    {
+      "name": "sugarcane_cropland",
+      "scene_id": "20250223_165546_32_4001",
+      "place": "Usulut\u00e1n, El Salvador",
+      "description": "Green cropland (mostly sugar cane), El Salvador",
+      "worldcover_classes": [
+        40
+      ],
+      "n_pixels_available": 9486,
+      "n_pixels_used": 400,
+      "median_lon": -88.5104,
+      "median_lat": 13.27385
+    },
+    {
+      "name": "turbid_estuary_water",
+      "scene_id": "20250223_165546_32_4001",
+      "place": "Usulut\u00e1n, El Salvador",
+      "description": "Sediment-rich estuary water, El Salvador",
+      "worldcover_classes": [
+        80
+      ],
+      "n_pixels_available": 23081,
+      "n_pixels_used": 400,
+      "median_lon": -88.44274,
+      "median_lat": 13.16305
+    },
+    {
+      "name": "sand_beach",
+      "scene_id": "20250223_165546_32_4001",
+      "place": "Usulut\u00e1n, El Salvador",
+      "description": "Bright sand beach / barrier island, El Salvador",
+      "worldcover_classes": [
+        60,
+        30
+      ],
+      "n_pixels_available": 89,
+      "n_pixels_used": 89,
+      "median_lon": -88.39542,
+      "median_lat": 13.16358
+    },
+    {
+      "name": "irrigated_crop",
+      "scene_id": "20250608_091605_90_4001",
+      "place": "Konya, T\u00fcrkiye",
+      "description": "Irrigated, fully green crop field, Konya plain, T\u00fcrkiye",
+      "worldcover_classes": [
+        40
+      ],
+      "n_pixels_available": 23036,
+      "n_pixels_used": 400,
+      "median_lon": 32.6237,
+      "median_lat": 37.60453
+    },
+    {
+      "name": "dry_bare_soil",
+      "scene_id": "20250608_091605_90_4001",
+      "place": "Konya, T\u00fcrkiye",
+      "description": "Bare, dry agricultural soil, Konya plain",
+      "worldcover_classes": [
+        40,
+        60
+      ],
+      "n_pixels_available": 2989,
+      "n_pixels_used": 400,
+      "median_lon": 32.61707,
+      "median_lat": 37.63723
+    },
+    {
+      "name": "dry_steppe_grassland",
+      "scene_id": "20250608_091605_90_4001",
+      "place": "Konya, T\u00fcrkiye",
+      "description": "Senescent steppe grassland, Konya",
+      "worldcover_classes": [
+        30
+      ],
+      "n_pixels_available": 46636,
+      "n_pixels_used": 400,
+      "median_lon": 32.51583,
+      "median_lat": 37.57115
+    },
+    {
+      "name": "dense_urban",
+      "scene_id": "20250407_035509_25_4001",
+      "place": "Ho Chi Minh City, Vietnam",
+      "description": "Dense built-up area, Ho Chi Minh City",
+      "worldcover_classes": [
+        50
+      ],
+      "n_pixels_available": 27607,
+      "n_pixels_used": 400,
+      "median_lon": 106.66057,
+      "median_lat": 10.74509
+    },
+    {
+      "name": "bright_industrial_roof",
+      "scene_id": "20250407_035509_25_4001",
+      "place": "Ho Chi Minh City, Vietnam",
+      "description": "Bright industrial roofs (warehouses), Ho Chi Minh City",
+      "worldcover_classes": [
+        50
+      ],
+      "n_pixels_available": 550,
+      "n_pixels_used": 400,
+      "median_lon": 106.67068,
+      "median_lat": 10.63736
+    },
+    {
+      "name": "river_water",
+      "scene_id": "20250407_035509_25_4001",
+      "place": "Ho Chi Minh City, Vietnam",
+      "description": "Saigon / Dong Nai river water, Ho Chi Minh City",
+      "worldcover_classes": [
+        80
+      ],
+      "n_pixels_available": 26090,
+      "n_pixels_used": 400,
+      "median_lon": 106.75051,
+      "median_lat": 10.69442
+    },
+    {
+      "name": "chaparral_unburned",
+      "scene_id": "20241215_185916_33_4001",
+      "place": "Malibu, California, USA",
+      "description": "Unburned chaparral / shrubland, Santa Monica Mountains",
+      "worldcover_classes": [
+        20,
+        10
+      ],
+      "n_pixels_available": 41437,
+      "n_pixels_used": 400,
+      "median_lon": -118.73216,
+      "median_lat": 34.06688
+    },
+    {
+      "name": "burn_scar",
+      "scene_id": "20241215_185916_33_4001",
+      "place": "Malibu, California, USA",
+      "description": "Fresh burn scar of the Franklin fire (Dec 2024), Malibu",
+      "worldcover_classes": [
+        20,
+        10,
+        30
+      ],
+      "n_pixels_available": 8184,
+      "n_pixels_used": 400,
+      "median_lon": -118.69967,
+      "median_lat": 34.05137
+    },
+    {
+      "name": "clear_ocean",
+      "scene_id": "20241215_185916_33_4001",
+      "place": "Malibu, California, USA",
+      "description": "Clear open ocean, Santa Monica Bay",
+      "worldcover_classes": [
+        80
+      ],
+      "n_pixels_available": 204082,
+      "n_pixels_used": 400,
+      "median_lon": -118.69473,
+      "median_lat": 33.98246
+    },
+    {
+      "name": "coal_mine_surface",
+      "scene_id": "20250219_053251_31_4001",
+      "place": "Korba, Chhattisgarh, India",
+      "description": "Dark open-cast coal mine surface, Korba coalfield, India",
+      "worldcover_classes": [
+        60
+      ],
+      "n_pixels_available": 2086,
+      "n_pixels_used": 400,
+      "median_lon": 82.65247,
+      "median_lat": 22.33315
+    },
+    {
+      "name": "mine_spoil_bright",
+      "scene_id": "20250219_053251_31_4001",
+      "place": "Korba, Chhattisgarh, India",
+      "description": "Bright overburden / spoil heaps, Korba coalfield",
+      "worldcover_classes": [
+        60
+      ],
+      "n_pixels_available": 2496,
+      "n_pixels_used": 400,
+      "median_lon": 82.66555,
+      "median_lat": 22.33084
+    },
+    {
+      "name": "sabkha_salt_flat",
+      "scene_id": "20250511_074311_00_4001",
+      "place": "Al Dhafra coast, UAE",
+      "description": "Bright coastal sabkha (salt flat), Al Dhafra, UAE",
+      "worldcover_classes": [
+        60
+      ],
+      "n_pixels_available": 68616,
+      "n_pixels_used": 400,
+      "median_lon": 53.74984,
+      "median_lat": 24.1598
+    },
+    {
+      "name": "desert_sand",
+      "scene_id": "20250511_074311_00_4001",
+      "place": "Al Dhafra coast, UAE",
+      "description": "Desert sand / gravel plain, Al Dhafra, UAE",
+      "worldcover_classes": [
+        60
+      ],
+      "n_pixels_available": 80490,
+      "n_pixels_used": 400,
+      "median_lon": 53.7687,
+      "median_lat": 24.03492
+    },
+    {
+      "name": "shallow_coastal_water",
+      "scene_id": "20250511_074311_00_4001",
+      "place": "Al Dhafra coast, UAE",
+      "description": "Shallow, bright-bottomed coastal water, Arabian Gulf",
+      "worldcover_classes": [
+        80
+      ],
+      "n_pixels_available": 47560,
+      "n_pixels_used": 400,
+      "median_lon": 53.82884,
+      "median_lat": 24.07524
+    }
+  ]
+}
