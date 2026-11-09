@@ -1,0 +1,90 @@
+Space Academy 2026 — Hyperspectral Earth Observation course material
+
+Copyright (c) 2026 Space42 and the UAE Space Agency. All rights reserved.
+
+This repository is published for the participants of the Space Academy 2026 hyperspectral
+course. It is NOT open-source software and NOT open educational content. Being publicly
+readable on GitHub does not place it in the public domain or grant any licence beyond the
+one written below.
+
+
+1. OWNERSHIP
+
+   The course material -- the notebooks, the lecture slides, the exercises, the quizzes,
+   the assignments, the templates, the written text and the source code in this repository
+   -- is the joint property of Space42 and the UAE Space Agency.
+
+
+2. PERMISSION GRANTED TO COURSE PARTICIPANTS
+
+   If you are enrolled in the Space Academy 2026 hyperspectral course, you are permitted,
+   at no charge, to:
+
+     (a) copy this repository, including by cloning it and by running it in hosted
+         environments such as Google Colab;
+     (b) run, study and modify the material for your own learning;
+     (c) keep your copy, and your own modifications of it, after the course ends;
+     (d) use what you have learned, and code you have written yourself, in your own
+         later work without restriction.
+
+   This permission is personal to you and does not expire.
+
+
+3. WHAT IS NOT PERMITTED
+
+   Without prior written permission from both copyright holders, you may not:
+
+     (a) redistribute, publish, mirror, or share this material, or any substantial part
+         of it, whether modified or not, and whether or not for payment -- this includes
+         re-uploading it to a public repository, a file-sharing service or a website;
+     (b) use it to teach, train or examine others, inside or outside your organisation;
+     (c) use it for any commercial purpose, including consultancy and paid training;
+     (d) remove or alter this licence, the copyright notices, or the data attributions.
+
+   Quoting short extracts with attribution -- in a thesis, a report, a presentation or a
+   paper -- is permitted and encouraged.
+
+
+4. THIRD-PARTY DATA AND SOFTWARE
+
+   Parts of this repository are not covered by the copyright in section 1 and carry their
+   own terms. Nothing in this licence restricts your rights in that material, and nothing
+   in this licence grants you rights the owner has not granted.
+
+   Planet Tanager imagery, and the products derived from it in data/spectral_library/
+   and data/tanager_catalog_index.geojson
+       "Tanager STAC Data, available at www.planet.com/data/stac (c) 2025 Planet Labs PBC"
+       Licensed CC-BY-4.0. Cite the acquisition year of the scene you used.
+       The scene files themselves are not in this repository; they are downloaded from
+       Planet's public catalogue when a notebook needs them.
+
+   ESA WorldCover land-cover labels in data/labels/
+       (c) ESA WorldCover project / contains modified Copernicus Sentinel data (2021).
+       ESA WorldCover 10 m 2021 v200, licensed CC-BY-4.0, accessed via Microsoft
+       Planetary Computer. The files here are aggregated to the Tanager 30 m grid.
+
+   EnMAP Level 2A subset in data/enmap/
+       "EnMAP data (c) DLR 2024 All rights reserved", as stated in the product metadata
+       file distributed alongside it. Supplied for use within this course only. It is not
+       licensed for redistribution by the copyright holders of section 1, and is subject
+       to the DLR EnMAP data policy -- see the bundled METADATA.XML.
+
+   Third-party Python packages are used under their own licences; see requirements.txt.
+
+   USGS spectral libraries referenced by the notebooks are works of the United States
+   Government and are downloaded by you, not redistributed here.
+
+
+5. NO WARRANTY
+
+   The material is provided "as is", without warranty of any kind, express or implied.
+   The copyright holders are not liable for any claim, damage or other liability arising
+   from the material or its use. The imagery and derived products are teaching material,
+   not an operational or certified data product, and must not be relied upon for
+   navigation, safety, regulatory, or commercial decision-making.
+
+
+6. CONTACT
+
+   For permission beyond this licence, contact the course organisers through the Space
+   Academy programme.

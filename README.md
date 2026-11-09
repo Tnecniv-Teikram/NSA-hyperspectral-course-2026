@@ -321,11 +321,20 @@ Still stuck? Bring it to the next session — and bring the **full error message
 
 ## Credits and licence
 
-- **Tanager imagery:** *"Tanager STAC Data, available at www.planet.com/data/stac © 2025 Planet Labs PBC"* —
-  CC-BY-4.0. Cite it with the acquisition year of the scene you used.
-- **Land-cover labels:** ESA WorldCover 10 m 2021 v200, © ESA WorldCover project / contains modified
-  Copernicus Sentinel data (2021), CC-BY-4.0.
-- **Laboratory spectra:** USGS Spectral Library Version 7.
-
 Course material for the **Space Academy 2026** programme, an initiative of the **UAE Space Agency** and
-**Space42**.
+**Space42**, and © 2026 both of them jointly. It is **not** open-source or open educational content — being
+readable on GitHub grants no licence beyond the one in [`LICENSE`](LICENSE).
+
+**As a participant you may** clone it, run it in Colab, modify it, and keep your copy for good. Anything you
+write yourself is yours. **You may not** republish or mirror it, use it to teach others, or use it
+commercially. Quoting extracts with attribution — in a thesis, report or paper — is fine and welcome.
+
+The data has its own terms, which this licence does not override:
+
+- **Tanager imagery** — *"Tanager STAC Data, available at www.planet.com/data/stac © 2025 Planet Labs PBC"*,
+  CC-BY-4.0. Cite the acquisition year of the scene you used.
+- **Land-cover labels** — ESA WorldCover 10 m 2021 v200, © ESA WorldCover project / contains modified
+  Copernicus Sentinel data (2021), CC-BY-4.0.
+- **EnMAP subset** — *"EnMAP data © DLR 2024 All rights reserved"*. For use inside this course only; do not
+  redistribute it.
+- **Laboratory spectra** — USGS Spectral Library Version 7, downloaded by you when a notebook asks for it.

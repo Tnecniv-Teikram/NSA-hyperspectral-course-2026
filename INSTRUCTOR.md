@@ -262,7 +262,16 @@ to your organisation's CA bundle: `export REQUESTS_CA_BUNDLE=/path/ca.pem GDAL_C
   - The theme README describes the `02` scene as Riyadh, but it is Ho Chi Minh City. It also refers to
     `00_data_exploration_starter.ipynb` and a `docs/` folder that do not exist.
 
-## Data credits
+## Licence and data credits
+
+The material is © 2026 Space42 and the UAE Space Agency jointly, all rights reserved — see
+[`LICENSE`](LICENSE). Participants may clone, run, modify and keep it; they may not redistribute it, teach
+from it, or use it commercially.
+
+**Before reusing this material elsewhere**, note the one piece that is not ours to pass on: the EnMAP L2A
+subset in `data/enmap/` carries *"EnMAP data © DLR 2024 All rights reserved"* in its own product metadata.
+It is in the repository for this course; strip it from any copy you hand to a third party, and have
+participants obtain their own via the DLR EnMAP portal if they need it after the course.
 
 - Tanager: *"Tanager STAC Data, available at www.planet.com/data/stac © 2025 Planet Labs PBC"*, CC-BY-4.0
   (use the acquisition year of each scene).
