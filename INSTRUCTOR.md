@@ -95,15 +95,17 @@ to imaging spectroscopy and everything needed to train and validate a model.
 Relevance 20 · Impact 20 · Creativity 15 · Presentation 15). See `assignments/final_project_brief.md`.
 Quizzes are formative and ungraded.
 
-### Not taught in this run (kept in the repository)
+### Not timetabled — handed out as optional homework
 
-| Material | Note |
-|---|---|
-| `17_hypercoast_tanager_enmap.ipynb`, `qgis_lab_hyperspectral.md`, `wx_qgis_hypercoast` | self-study |
-| `30_advanced_analytics.ipynb`, `w4a_advanced_analytics` | self-study — change detection, uncertainty, scaling |
-| `31_from_notebook_to_product.ipynb`, `w4b_implementation_and_testing` | self-study — packaging, tests, the app |
-| `w3d_project_workshop_qa`, `templates/interim_qa_checklist.md` | not scheduled; the checklist is still a useful pre-submission self-check |
-| `assignments/assignment_w1`–`w3` | not used — the mini project is the whole assessment |
+Ungraded, nothing to submit. Hand each one out at the point shown; see `teaching_plan.md` for the detail.
+
+| Material | Hand out | Note |
+|---|---|---|
+| `17_hypercoast_tanager_enmap.ipynb`, `qgis_lab_hyperspectral.md`, `wx_qgis_hypercoast` | Thu 12 Nov | interactive maps; the QGIS/EnMAP-Box desktop route |
+| `30_advanced_analytics.ipynb`, `w4a_advanced_analytics` | Thu 19 Nov | change detection, uncertainty, scaling — the one to push |
+| `31_from_notebook_to_product.ipynb`, `w4b_implementation_and_testing` | Wed 25 Nov | packaging, tests, the app — an after-course extension |
+| `w3d_project_workshop_qa`, `templates/interim_qa_checklist.md` | Mon 23 Nov | pre-submission self-check; the deck is the QA walkthrough |
+| `assignments/assignment_w1`–`w3` | end of each week | extra practice, ungraded — the mini project is the whole assessment |
 
 ---
 
@@ -128,8 +130,8 @@ hyperspectral_course_notebooks/
 ├── 17_hypercoast_tanager_enmap.ipynb            Week 2 (optional session, pairs with the QGIS lab)
 ├── 20_geoai_deep_learning.ipynb                 Week 3
 ├── 21_validation_accuracy_assessment.ipynb      Week 3
-├── 30_advanced_analytics.ipynb                  self-study
-├── 31_from_notebook_to_product.ipynb            self-study
+├── 30_advanced_analytics.ipynb                  optional homework
+├── 31_from_notebook_to_product.ipynb            optional homework
 │
 ├── teaching_plan.md  ← day-by-day plan: which deck, notebook and homework per session
 ├── qgis_lab_hyperspectral.md  ← 3-hour desktop lab (EnMAP-Box + HyperCoast plugin)

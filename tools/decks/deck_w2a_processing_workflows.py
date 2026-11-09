@@ -65,7 +65,7 @@ d.bullets("Library code and notebook code", [
     "A notebook cannot be imported, scheduled, unit-tested or reviewed line by line",
     "**Rule of thumb:** if you have pasted it twice, it belongs in a module",
 ], kicker="where does code live?",
-   notes="Preview 31_from_notebook_to_product (self-study): the same function is then called by the notebook, a command-line tool and a Streamlit app. "
+   notes="Preview 31_from_notebook_to_product (optional homework): the same function is then called by the notebook, a command-line tool and a Streamlit app. "
          "Writing it once in a module is what makes that possible.")
 
 d.section("2. Anatomy of a pipeline", "Configuration, steps, gates, outputs")
@@ -232,7 +232,7 @@ d.bullets("Determinism is testable", [
     "If a 'deterministic' step gives two answers, you have an unseeded random call or thread non-determinism",
     "Cheap to write, and it catches a class of bug that is otherwise invisible",
 ], kicker="prove it, do not assume it",
-   notes="This is the seed of notebook 31 (self-study), where the same idea becomes a regression test on "
+   notes="This is the seed of notebook 31 (optional homework), where the same idea becomes a regression test on "
          "the product's mapped area.")
 
 d.handover("12_processing_workflow.ipynb", [

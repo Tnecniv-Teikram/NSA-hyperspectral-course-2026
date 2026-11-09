@@ -135,7 +135,7 @@ d.figure("Why 30 m, and not 10 m",
          kicker="the trade-off",
          notes="Pre-empt the most common project mistake: planning a study that needs weekly "
                "hyperspectral coverage of a whole country. Tasked scenes, not wall-to-wall time "
-               "series. If anyone asks about sharpening to 10 m, that is 30_advanced_analytics, which is self-study.")
+               "series. If anyone asks about sharpening to 10 m, that is 30_advanced_analytics, which is optional homework after week 2.")
 
 d.figure("Tanager-1 open data: the course scenes",
          "12_processing_workflow/01_4_batch_processing_all_course_scenes.png",

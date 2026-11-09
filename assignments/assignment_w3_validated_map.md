@@ -2,9 +2,10 @@
 
 **Space Academy 2026 · Hyperspectral course · Week 3** · project team · due before the *Interim project feedback and quality assurance* session · 15 % of the course grade
 
-> **Not used in the 2026 three-week course.** Assessment is the mini project alone — see
-> [`final_project_brief.md`](final_project_brief.md). This brief is kept for reference and for a
-> future longer run, and is still a good self-directed exercise.
+> **Optional homework in the 2026 three-week course — ungraded, nothing to hand in.** The mini project is the
+> whole assessment, see [`final_project_brief.md`](final_project_brief.md). Ignore the weighting in the line
+> above: this brief is offered as extra practice at the end of the matching week, and the work in it feeds
+> your project. Take it only if your project is on track.
 
 **Goal:** produce the first validated version of your project's main map, using an AI/GeoAI model and a rigorous
 validation design.

@@ -58,10 +58,11 @@ and can be moderated with peer feedback.
 
 ## Going further
 
-Three sessions' worth of material is in the repository but not taught in this run, and it is exactly what a
-strong project draws on: `30_advanced_analytics.ipynb` (change detection, uncertainty, scaling),
-`31_from_notebook_to_product.ipynb` (packaging and tests) and `templates/interim_qa_checklist.md`, which is a
-good self-check before you submit.
+Three sessions' worth of material is offered as optional homework rather than taught in class, and it is
+exactly what a strong project draws on: `30_advanced_analytics.ipynb` (change detection, uncertainty,
+scaling), `31_from_notebook_to_product.ipynb` (packaging and tests) and `templates/interim_qa_checklist.md`,
+which is a good self-check before you submit. None of it is marked — but the first of the three is where the
+marks in **Validity** and **Creativity** tend to come from.
 
 ## Rules and good practice
 

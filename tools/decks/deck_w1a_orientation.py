@@ -171,7 +171,7 @@ d.handover("00_EO_data_quickstart_notebook.ipynb", [
 
 d.recap([
     "Three weeks: concepts and preprocessing, then methods, then GeoAI, validation and your project",
-    "Theme notebooks 00–06 for applications; method notebooks 09–21 in class, 30–31 for self-study",
+    "Theme notebooks 00–06 for applications; method notebooks 09–21 in class, 17 and 30–31 as optional homework",
     "Everything runs on a laptop; `hsi_utils.py` handles the file plumbing",
     "The mini project is **100 %** of the mark — and **validity carries the most weight**",
     "Pick your theme this week and scope it by 19 November — there is one build afternoon",

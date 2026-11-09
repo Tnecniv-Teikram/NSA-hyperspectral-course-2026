@@ -177,13 +177,18 @@ it is the single thing most likely to cost you a day later.
 
 A day-by-day run sheet with timings is in [`teaching_plan.md`](teaching_plan.md).
 
-### Material we will not cover in class
+### Optional homework
 
-It is all in this repository, and it is the natural next step if you want to go further:
+Three more topics are in this repository as **optional homework**. Nothing here is marked and there is nothing
+to hand in — take them if you want to go further, and skip them without guilt if your project needs the time.
 
-- `17_hypercoast_tanager_enmap` and [`qgis_lab_hyperspectral.md`](qgis_lab_hyperspectral.md) — interactive maps and the QGIS/EnMAP-Box desktop lab
-- `30_advanced_analytics` — change detection, uncertainty, harmonisation, scaling
-- `31_from_notebook_to_product` — packaging a notebook into a tested pipeline and an app
+| Take it | After | What you get |
+|---|---|---|
+| `17_hypercoast_tanager_enmap` + [`qgis_lab_hyperspectral.md`](qgis_lab_hyperspectral.md) | week 1 | interactive maps of Tanager and EnMAP, plus the QGIS/EnMAP-Box desktop route if you prefer a GUI to code |
+| `30_advanced_analytics` | week 2 | change detection, uncertainty, harmonisation, scaling — the most useful one for your project |
+| `31_from_notebook_to_product` | week 3 | turning your notebook into a tested pipeline and a small app |
+
+Each comes with its own lecture deck in `lectures/`, so you are not working from the notebook alone.
 
 ## What you hand in
 
