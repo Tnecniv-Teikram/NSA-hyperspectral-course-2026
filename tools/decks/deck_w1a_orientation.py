@@ -180,7 +180,7 @@ d.recap([
          "would like to attack. Those sentences become project ideas in week 2.")
 
 d.references([
-    "Course README and folder map — hyperspectral_course_notebooks/README.md",
+    "Course README and folder map — README.md (instructor detail: INSTRUCTOR.md)",
     "Final project brief — assignments/final_project_brief.md",
     "Evaluation rubric — templates/evaluation_rubric.md",
     "Project scoping canvas — templates/project_scoping_template.md",

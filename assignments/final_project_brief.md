@@ -4,7 +4,7 @@
 
 ## What you build
 
-An **applied hyperspectral solution** for one of the six challenge themes (see `../../notebooks/README.md`):
+An **applied hyperspectral solution** for one of the six challenge themes (see `../../Starting_notebooks/README.md`):
 precision agriculture · land use and urban change · air quality and GHG plumes · climate-induced disasters ·
 ecosystem health and blue carbon · water quality.
 

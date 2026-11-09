@@ -19,6 +19,7 @@ __pycache__/
 # Delete these two lines if you want the built decks in the repository.
 slides/*.pptx
 slides/figures/
+slides/previews/
 
 # Environments — never keep a virtualenv inside a synced folder
 .venv/

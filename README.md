@@ -1,319 +1,331 @@
-# 🛰️ Space Academy 2026 — Hyperspectral course materials
+# 🛰️ Space Academy 2026 — Hyperspectral Earth Observation
 
-Course notebooks, **lecture slides**, exercises, quizzes, assignments, a **QGIS lab** and project templates for the
-four-week **Space Academy 2026 hyperspectral course** (3–25 November 2026).
-Start with **[`teaching_plan.md`](teaching_plan.md)** — it maps every session to its deck, notebook and homework,
-with timings. They complement the theme starter notebooks `00`–`06` in
-[`../notebooks`](../notebooks) (Arab Youth Space Hackathon: 813 Challenge), which cover data access and one
-theme each. This folder covers the rest of the syllabus: preprocessing, feature extraction, target detection,
-classification, GeoAI, validation, advanced analytics and the final project.
+**Participant handbook · four weeks · 2–26 November 2026**
 
-All material uses real **Planet Tanager** hyperspectral imagery (426 bands, 380–2500 nm, 30 m; CC-BY-4.0).
+Welcome. This page is the one you keep open. It tells you what to install, what happens each day, what
+you have to hand in, and where to look when something breaks.
+
+All practical work uses **real Planet Tanager satellite imagery** — 426 spectral bands from 380 to 2500 nm at
+30 m, open data under CC-BY-4.0. No API keys, no logins, no paid accounts.
 
 ---
 
-## Quickstart for participants
+## What you will be able to do by the end
 
-You have two ways to run the material. **Pick Colab unless you have a reason not to.**
+You already work with multispectral imagery. By the final week you will be able to:
 
-### Option 1 — Google Colab (recommended, nothing to install)
+- Read a spectrum and name the physical cause of every bend in it
+- Open, mask, subset and preprocess a hyperspectral cube in Python
+- Reduce 400+ bands to the handful of features your question actually needs
+- Detect a specific material against an unknown background, and unmix a pixel
+- Train, tune and **honestly validate** both a classical and a deep-learning classifier
+- Say when hyperspectral data is worth it — and when Sentinel-2 would have done
+- Turn a notebook into something a colleague can run: a tested pipeline with a map coming out of it
 
-Click the **Open in Colab** badge at the top of any notebook, then run the first cell. It clones this
-repository, installs the few packages Colab lacks, and you are working. Colab also gives you a free GPU for
-`20_geoai_deep_learning`, and it downloads the satellite scenes far faster than a laptop does, because Planet
-hosts them on Google Cloud Storage.
+---
 
-Two things worth knowing:
+## What is in this repository
 
-- A Colab session is temporary. Anything you want to keep — your edited notebook, exported maps — should be
-  downloaded or saved to Google Drive before the session ends.
-- Scenes are re-downloaded in each new session. To avoid that, mount your Drive and point the course at it:
+```
+NSA-hyperspectral-course-2026/
+├── README.md                 ← you are here
+├── INSTRUCTOR.md                every syllabus session mapped to its materials
+├── teaching_plan.md             the day-by-day plan, with timings
+│
+├── 09_numpy_for_hyperspectral.ipynb  …  31_from_notebook_to_product.ipynb
+│                                the 13 course notebooks, in teaching order
+├── hsi_utils.py                 the shared helpers every notebook imports
+│
+├── exercises/                   one exercise set per challenge theme (with solutions)
+├── quizzes/                     four ungraded lecture quizzes (with answers)
+├── assignments/                 the three weekly assignments + the final project brief
+├── templates/                   scoping canvas, project skeleton, checklists, rubric
+├── slides/                      one lecture deck per session
+├── data/                        land-cover labels, spectral library, EnMAP subset, scene index
+├── app/                         an example product and a Streamlit viewer
+└── tests/  tools/               test suite and the scripts that build the material
+```
+
+**The Week 1 theme notebooks are in a separate repository.** The six challenge-theme notebooks `00`–`06`
+live in [`813-hyperspectral-hackathon`](https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon). Clone it *beside* this one, named `Starting_notebooks`, so
+the relative links resolve:
+
+```bash
+cd ..        # next to this repository
+git clone https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon.git Starting_notebooks
+```
+
+Two repositories, two jobs. **`Starting_notebooks`** gets you to your first hyperspectral image and gives you
+one notebook per application theme. **This** repository is the method: everything from preprocessing to a
+validated AI map to a finished product.
+
+---
+
+## Day one — get your environment working
+
+Do this **before** Monday afternoon if you can. Setup is the single thing most likely to cost you a day.
+
+### Option 1 · Google Colab — recommended, nothing to install
+
+Open any notebook and click the **Open in Colab** badge at the top, then run the first cell. It fetches the
+course material and installs the few packages Colab lacks. You need nothing but a browser and a Google
+account.
+
+Colab is also the *faster* option for this course: it gives you a free GPU for the deep-learning session, and
+the satellite scenes arrive in minutes because Planet hosts them on Google Cloud Storage — on hotel wifi a
+single 1 GB scene can take an hour.
+
+Two things to know:
+
+- **A Colab session is temporary.** Download your edited notebook, or save it to Google Drive, before you
+  close the tab.
+- **Scenes are re-downloaded in every new session.** To avoid that, mount your Drive and point the course at
+  it, once per session:
 
   ```python
   from google.colab import drive; drive.mount("/content/drive")
   import os; os.environ["TANAGER_DATA_DIR"] = "/content/drive/MyDrive/tanager"
   ```
 
-### Option 2 — Local install
+### Option 2 · Your own machine
 
-Worth it if you want the QGIS session, the Streamlit app, or simply prefer your own machine.
+Worth it if you want the QGIS session, the Streamlit viewer, or you simply prefer local work. You need
+**Python 3.11 or newer**.
 
 ```bash
-git clone https://github.com/Tnecniv-Teikram/hyperspectral-course-2026.git
-cd hyperspectral-course-2026
+git clone https://github.com/Tnecniv-Teikram/NSA-hyperspectral-course-2026.git
+cd NSA-hyperspectral-course-2026
 
-python -m venv ~/venvs/hsi2026            # keep the environment OUT of any synced folder
-source ~/venvs/hsi2026/bin/activate       # Windows: %USERPROFILE%\venvs\hsi2026\Scripts\activate
+# create the environment OUTSIDE any synced folder
+python -m venv ~/venvs/hsi2026
+source ~/venvs/hsi2026/bin/activate          # Windows: %USERPROFILE%\venvs\hsi2026\Scripts\activate
 pip install -r requirements.txt
 
+# register the environment as a Jupyter kernel, and give it an obvious name
 python -m ipykernel install --user --name hsi2026 --display-name "Hyperspectral course 2026"
 jupyter lab
 ```
 
-Then choose the **Hyperspectral course 2026** kernel inside each notebook.
+**Then pick the "Hyperspectral course 2026" kernel inside every notebook.** This matters more than it looks —
+see the first entry under *When something breaks*.
 
-- **Python 3.11 or newer**, because `hypercoast` (notebook 17) requires it.
-- `torch` is ~2.5 GB and only notebook 20 needs it. Remove that line from `requirements.txt` for a quick start
-  and install it later.
-- Behind a corporate proxy that inspects TLS, point Python at your CA bundle:
-  `export REQUESTS_CA_BUNDLE=/path/ca.pem GDAL_CURL_CA_BUNDLE=/path/ca.pem`.
-- **Never create the virtualenv inside OneDrive, Dropbox or iCloud.** Sync corrupts it, and the folder holds
-  tens of thousands of small files.
+Three local gotchas:
 
-### The data
+- **Never put the virtual environment inside OneDrive, Dropbox or iCloud.** Sync corrupts it, and it holds tens
+  of thousands of small files.
+- `torch` is about 2.5 GB and only the deep-learning notebook needs it. Delete that line from
+  `requirements.txt` for a quick start, and install it before Week 3.
+- If `pip` or any download fails with `SSL: CERTIFICATE_VERIFY_FAILED`, you are behind a TLS-inspecting
+  corporate proxy. Point Python and GDAL at your organisation's CA bundle:
+  `export REQUESTS_CA_BUNDLE=/path/ca.pem GDAL_CURL_CA_BUNDLE=/path/ca.pem`
 
-No API keys, no logins, no `.env` file — every dataset the course uses is public and anonymous.
-`hsi_utils.get_scene("<scene id>")` looks for a scene locally and downloads it from Planet's STAC catalogue if it
-is missing (~1 GB each, so do it on a good connection). The small reference data — WorldCover labels, the
-spectral library, the EnMAP subset, the scene catalogue — is in `data/` and comes with the clone.
+### Are you fluent in numpy?
 
-### The starter notebooks (00–06)
+If slicing, axes, boolean masks and broadcasting are not second nature, start with
+**`09_numpy_for_hyperspectral.ipynb`** — 45–60 minutes, written for exactly
+this gap, using real cubes rather than toy arrays. It is the best hour you can spend before the course starts.
+Everything else assumes you can read and adapt array code.
 
-Week 1 also uses the six challenge-theme notebooks from the companion hackathon repository. Clone it as a
-**sibling folder named `notebooks`** so the relative links work:
+**Machine learning experience is not assumed.** The vocabulary — features, labels, train/test, overfitting,
+confusion matrix — is taught from zero in a 20-minute primer before the first classification session.
 
-```bash
-cd ..                 # next to this repository
-git clone https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon.git notebooks
-```
+### Day-one checklist
+
+- [ ] A notebook opens and runs its first cell (Colab badge, or local kernel selected)
+- [ ] `import hsi_utils` works
+- [ ] One Tanager scene is on disk or reachable — try the first section of notebook 10
+- [ ] Working locally? You have run the `ipykernel install` line above
+- [ ] Coming to the desktop session? QGIS 3.40+ and the **EnMAP-Box** plugin are installed (get the installer
+      from your instructor in Week 1 — the download is blocked on the venue network)
 
 ---
 
-## Who this course is for, and what it assumes
+## The four weeks
 
-The material is written for people who **already work with multispectral EO** (Sentinel-2, Landsat, QGIS, indices,
-supervised classification in desktop software) and are **new to hyperspectral** and **new to GeoAI / machine
-learning**. It never re-teaches what reflectance or NDVI is; it does teach, from zero, everything that is specific
-to imaging spectroscopy and everything needed to train and validate a model.
+Every week runs **Monday to Thursday**. There are no Friday sessions.
+Each day is roughly: lecture (1.5–2 h) · guided notebook (2–2.5 h) · your own work (1.5–2 h).
 
-| You need | Level | If you are short of it |
-|---|---|---|
-| Remote sensing fundamentals | Working knowledge — reflectance, atmospheric correction, band indices | The course assumes this; the theme notebooks 00–06 are a gentle refresher |
-| **Python and numpy** | Able to read and adapt array code: slicing, axes, boolean masks, broadcasting | **Start with `09_numpy_for_hyperspectral.ipynb`** — 45–60 min, written for exactly this gap |
-| Machine learning | None assumed | The `w2d0_ml_primer_for_eo` deck covers the vocabulary in 20 minutes before the classification session |
-| Statistics | Comfortable with means, percentiles, a confusion matrix | Notebook 21 §5 (area-adjusted estimators) is marked as advanced/reference |
+### Week 1 · 2–5 Nov — onsite and online
+*Seeing the spectrum*
 
-**Difficulty of each notebook** (⭐ follow along · ⭐⭐ requires attention · ⭐⭐⭐ advanced, has an optional deep-dive):
+| Day | Session | You work on | Homework |
+|---|---|---|---|
+| **Mon 2** | Orientation · Introduction to hyperspectral EO | environment setup · `00_EO_data_quickstart_notebook` | `ex_00` · quiz W1a · **notebook 09 if numpy is new to you** |
+| **Tue 3** | Spectral signatures, sensors and use cases | `10_spectral_signatures_and_libraries` · **field spectrometer session (2 h)** | finish notebook 10's "Your turn" |
+| **Wed 4** | Data access, visualization and exploration | one or two theme notebooks `01`–`06`, your choice · overlay your own field spectra on the course library | the matching `ex_01`–`ex_06` |
+| **Thu 5** | Preprocessing concepts | `11_preprocessing` — the fullest notebook of the week | quiz W1b · **start assignment W1** |
+
+The one week everyone is in the room. Bring a laptop you can install on, and use the instructors while they
+are physically next to you.
+
+### Week 2 · 9–12 Nov — online
+*From cube to answer*
+
+| Day | Session | You work on | Homework |
+|---|---|---|---|
+| **Mon 9** | Image processing workflows | `12_processing_workflow` · `hsi_utils.py` | **assignment W1 due** |
+| **Tue 10** | Feature extraction and dimensionality reduction | `13_feature_extraction_dim_reduction` | quiz W2 |
+| **Wed 11** | Material discrimination and target detection | `14_material_discrimination_target_detection` — bring your Week 1 field spectra | — |
+| **Thu 12** | ML primer + classification · Project scoping | `15_classification_classical` · `16_scene_finder` + scoping canvas | **assignment W2 issued** · scoping canvas due Mon 16 |
+| *extra* | *(optional)* HyperCoast and QGIS desktop lab | `17_hypercoast_tanager_enmap` · `qgis_lab_hyperspectral.md` | — |
+
+### Week 3 · 16–19 Nov — online
+*GeoAI, and proving it works*
+
+| Day | Session | You work on | Homework |
+|---|---|---|---|
+| **Mon 16** | GeoAI methods for hyperspectral | reading + the lecture sections of `20_geoai_deep_learning` | quiz W3 · **scoping canvas due** |
+| **Tue 17** | AI-assisted classification and mapping | `20_geoai_deep_learning` — training and inference (~6 min runtime on CPU) | — |
+| **Wed 18** | Validation and accuracy assessment | `21_validation_accuracy_assessment` | **assignment W3 issued** |
+| **Thu 19** | Project workshop · interim feedback and QA | your own project (`templates/project_template.ipynb`) · peer review · 10-min interim presentation | **assignment W3 due at the review** |
+
+### Week 4 · 23–26 Nov — onsite and online
+*Refine, build, present*
+
+| Day | Session | You work on | Homework |
+|---|---|---|---|
+| **Mon 23** | Advanced analytics and refinement | `30_advanced_analytics` — change detection before lunch, uncertainty and scaling after | the biggest notebook of the course |
+| **Tue 24** | Final implementation and testing | `31_from_notebook_to_product` · then your own pipeline and tests | submission checklist issued |
+| **Wed 25** | Presentation preparation and rehearsal | your slides, timed and rehearsed | — |
+| **Thu 26** | **Final submission** · final presentations and feedback | 12-minute presentation + 5 minutes of questions | — |
+
+A day-by-day run sheet with timings is in
+[`teaching_plan.md`](teaching_plan.md).
+
+---
+
+## What you hand in
+
+| | What | When | Worth |
+|---|---|---|---|
+| **W1** | Scene exploration report — individual | start of Week 2 (Mon 9 Nov) | 10 % |
+| **W2** | Material discrimination and classification mini-project — in pairs | start of Week 3 (Mon 16 Nov) | 15 % |
+| **W3** | A validated AI map — project team | at the interim review (Thu 19 Nov) | 15 % |
+| **Final** | Graduation project: a working, validated hyperspectral application | Thu 26 Nov | **60 %** |
+
+Briefs are in `assignments/`. Start with
+[`final_project_brief.md`](assignments/final_project_brief.md) in Week 1 — the
+project runs through the whole course, and the weekly assignments are deliberately steps towards it.
+
+**Quizzes are ungraded.** They exist so you can find out what did not land, before it matters.
+
+Everything you need for the project is in `templates/`: the scoping canvas, a
+project notebook skeleton, the QA checklist, the submission checklist, the presentation outline, and **the
+rubric you will actually be marked against** — read `evaluation_rubric.md` early, not the night before.
+
+Two rules worth stating plainly:
+
+- **Do not submit raw HDF5 scenes.** List the scene IDs instead.
+- **AI coding assistants are allowed.** You must understand and be able to explain every line you submit.
+
+---
+
+## Difficulty, so you can plan your week
+
+⭐ follow along · ⭐⭐ needs attention · ⭐⭐⭐ advanced, with an optional deep-dive you may skip
 
 | Notebook | Level | Heaviest demand |
-|---|---|---|
+|---|:--:|---|
 | `09_numpy_for_hyperspectral` | ⭐ | none — this is the on-ramp |
 | `10_spectral_signatures_and_libraries` | ⭐ | reading plots |
 | `11_preprocessing` | ⭐⭐ | numpy masking and axes |
-| `12_processing_workflow` | ⭐⭐ | software-engineering patterns, not science |
-| `13_feature_extraction_dim_reduction` | ⭐⭐⭐ | PCA/MNF — the maths is skippable, the MNF section says how |
-| `14_material_discrimination_target_detection` | ⭐⭐⭐ | §1–2 are ⭐⭐; §3–4 (matched filter, unmixing) are the advanced part |
-| `15_classification_classical` | ⭐⭐ | first real ML — do the primer deck first |
-| `16_scene_finder` | ⭐ | familiar ground for anyone who has used a catalogue |
-| `17_hypercoast_tanager_enmap` | ⭐ | lightest code in the course |
-| `20_geoai_deep_learning` | ⭐⭐⭐ | PyTorch; needs the w3a mechanics slides first |
-| `21_validation_accuracy_assessment` | ⭐⭐ | §1–4 essential, §5 advanced/reference |
-| `30_advanced_analytics` | ⭐⭐⭐ | long; split it over two half-days |
+| `12_processing_workflow` | ⭐⭐ | software patterns, not science |
+| `13_feature_extraction_dim_reduction` | ⭐⭐⭐ | PCA / MNF — the maths is skippable |
+| `14_material_discrimination_target_detection` | ⭐⭐⭐ | §3–4 (matched filter, unmixing) are the hard part |
+| `15_classification_classical` | ⭐⭐ | your first real ML — do the primer first |
+| `16_scene_finder` | ⭐ | familiar if you have used a catalogue |
+| `17_hypercoast_tanager_enmap` | ⭐ | the lightest code in the course |
+| `20_geoai_deep_learning` | ⭐⭐⭐ | PyTorch |
+| `21_validation_accuracy_assessment` | ⭐⭐ | §1–4 essential, §5 is reference only |
+| `30_advanced_analytics` | ⭐⭐⭐ | length — it is split over a whole day |
 | `31_from_notebook_to_product` | ⭐⭐ | packaging and testing |
 
-## Course map: syllabus session → materials
-
-📘 = lecture, 🔧 = practical. "Theme notebooks" are in `../notebooks`; everything else is in this folder.
-
-### Week 1 · 2–5 Nov 2026 (onsite and online)
-
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Course orientation and objectives | 📘 | `w1a_course_orientation` | this README · `assignments/final_project_brief.md` | — |
-| Introduction to hyperspectral Earth observation | 📘 | `w1b_intro_hyperspectral_eo` | `10_spectral_signatures_and_libraries.ipynb` (§1–2) | `quizzes/quiz_w1a_intro_spectral_signatures.md` |
-| Spectral signatures, sensor concepts, and use cases | 📘 | `w1c_spectral_signatures_sensors` | `10_spectral_signatures_and_libraries.ipynb` | `quizzes/quiz_w1a_…` |
-| Hyperspectral data access, visualization, and exploration | 🔧 | `w1d_data_access_exploration` | `00_EO_data_quickstart_notebook.ipynb` (Mon, skim the Sentinel-2 half) + theme notebooks `01`–`06` (Wed); `09_numpy_for_hyperspectral.ipynb` as pre-work | `exercises/ex_00_…`, `exercises/ex_01`–`ex_06` |
-| Preprocessing concepts for hyperspectral data | 📘🔧 | `w1e_preprocessing` | `11_preprocessing.ipynb` | `quizzes/quiz_w1b_preprocessing.md` · **`assignments/assignment_w1_scene_exploration.md`** |
-
-*Every week runs **Monday to Thursday** — there are no Friday sessions. A 2-hour **field spectrometer session**
-sits on Tuesday 3 Nov alongside notebook 10; see `teaching_plan.md` for the run sheet.*
-
-### Week 2 · 9–12 Nov 2026 (online)
-
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Hyperspectral image processing workflows | 📘🔧 | `w2a_processing_workflows` | `12_processing_workflow.ipynb` · `hsi_utils.py` | "Your turn" in notebook |
-| Feature extraction and dimensionality reduction | 📘 | `w2b_feature_extraction` | `13_feature_extraction_dim_reduction.ipynb` | `quizzes/quiz_w2_features_detection_classification.md` |
-| Material discrimination and target detection | 📘🔧 | `w2c_material_discrimination_detection` | `14_material_discrimination_target_detection.ipynb` | "Your turn" in notebook |
-| Classification approaches for hyperspectral data | 📘🔧 | `w2d0_ml_primer_for_eo` (20 min) + `w2d_classification` | `15_classification_classical.ipynb` | **`assignments/assignment_w2_detection_classification.md`** |
-| Project scoping and use case definition | 🔧 | `w2e_project_scoping` | `16_scene_finder.ipynb` | `templates/project_scoping_template.md` |
-| *(optional extra day)* Hyperspectral data in HyperCoast and QGIS | 📘🔧 | `wx_qgis_hypercoast` | `17_hypercoast_tanager_enmap.ipynb` + `qgis_lab_hyperspectral.md` | "Your turn" in notebook |
-
-### Week 3 · 16–19 Nov 2026 (online)
-
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| GeoAI methods for hyperspectral applications | 📘 | `w3a_geoai_methods` | `20_geoai_deep_learning.ipynb` (§ overview) | `quizzes/quiz_w3_geoai_validation.md` |
-| AI-assisted hyperspectral classification and mapping | 🔧 | `w3b_ai_assisted_mapping` | `20_geoai_deep_learning.ipynb` | "Your turn" in notebook |
-| Validation methods and accuracy assessment | 📘🔧 | `w3c_validation_accuracy` | `21_validation_accuracy_assessment.ipynb` | `quizzes/quiz_w3_…` |
-| Applied project development workshop | 🔧 | `w3d_project_workshop_qa` | `templates/project_template.ipynb` | **`assignments/assignment_w3_validated_map.md`** |
-| Interim project feedback and quality assurance | 📘🔧 | `w3d_project_workshop_qa` | — | `templates/interim_qa_checklist.md` |
-
-### Week 4 · 23–26 Nov 2026 (onsite and online)
-
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Advanced hyperspectral analytics and solution refinement | 📘🔧 | `w4a_advanced_analytics` | `30_advanced_analytics.ipynb` | "Your turn" in notebook |
-| Final project implementation and testing | 🔧 | `w4b_implementation_and_testing` | `31_from_notebook_to_product.ipynb` · `app/streamlit_app.py` · `tests/` | — |
-| Presentation preparation and project rehearsal | 🔧 | `w4c_presentation_and_evaluation` | — | `templates/presentation_template.md` |
-| Final graduation project submission | 🔧 | `w4c_presentation_and_evaluation` | — | `templates/submission_checklist.md` |
-| Final evaluation and feedback | 📘 | `w4c_presentation_and_evaluation` | — | `templates/evaluation_rubric.md` |
-
-**Assessment:** assignment W1 10 % · W2 15 % · W3 15 % · final project 60 % (see `assignments/final_project_brief.md`).
-Quizzes are formative and ungraded.
+The ⭐⭐⭐ notebooks mark their hard parts explicitly and tell you what you can skip on a first pass. Skipping a
+marked deep-dive costs you nothing later.
 
 ---
 
-## Folder structure
+## The data
 
-```
-hyperspectral_course_notebooks/
-├── README.md                     ← you are here
-├── requirements.txt
-├── .gitignore                    ← keeps scenes, outputs and decks out of git
-├── hsi_utils.py                  ← shared helpers used by every notebook (read it, it is documented)
-│
-├── 09_numpy_for_hyperspectral.ipynb             Week 1 (optional on-ramp for the Python/numpy gap)
-├── 10_spectral_signatures_and_libraries.ipynb   Week 1
-├── 11_preprocessing.ipynb                       Week 1
-├── 12_processing_workflow.ipynb                 Week 2
-├── 13_feature_extraction_dim_reduction.ipynb    Week 2
-├── 14_material_discrimination_target_detection.ipynb   Week 2
-├── 15_classification_classical.ipynb            Week 2
-├── 16_scene_finder.ipynb                        Week 2
-├── 17_hypercoast_tanager_enmap.ipynb            Week 2 (optional session, pairs with the QGIS lab)
-├── 20_geoai_deep_learning.ipynb                 Week 3
-├── 21_validation_accuracy_assessment.ipynb      Week 3
-├── 30_advanced_analytics.ipynb                  Week 4
-├── 31_from_notebook_to_product.ipynb            Week 4
-│
-├── teaching_plan.md  ← day-by-day plan: which deck, notebook and homework per session
-├── qgis_lab_hyperspectral.md  ← 3-hour desktop lab (EnMAP-Box + HyperCoast plugin)
-│
-├── slides/           18 PowerPoint decks (one per session) + figures/ extracted from the notebooks
-├── exercises/        ex_00 … ex_06 for the theme notebooks (+ solutions/, instructor copy)
-├── quizzes/          four lecture quizzes (+ answers/, instructor copy)
-├── assignments/      weekly assignments + final project brief
-├── templates/        scoping canvas, project notebook, QA checklist, submission checklist, rubric, slides
-├── app/              mangrove_product.py (the example product + CLI) · streamlit_app.py (viewer)
-├── tests/            test_hsi_utils.py — 23 pytest tests (`pytest tests/ -q`, ~1 s)
-├── tools/            build_reference_library.py · make_subsets.py · export_for_qgis.py ·
-│                     extract_figures.py · deckbuild.py + decks/ · lint_decks.py
-├── data/
-│   ├── labels/                    ESA WorldCover 2021 labels aggregated to each Tanager grid (class + purity)
-│   ├── enmap/                     EnMAP L2A subset over Groningen + official METADATA.XML (23 MB)
-│   ├── spectral_library/          19 image-derived reference spectra (median, p10, p90) + metadata
-│   └── tanager_catalog_index.geojson   index of all 276 Tanager open-data STAC items
-└── outputs/          created by the notebooks (GeoTIFFs, reports); safe to delete
-```
+Seven Tanager scenes carry the whole course. You never download them by hand:
+`hsi_utils.get_scene("<scene id>")` looks for a scene on disk and fetches it from Planet's public catalogue if
+it is missing — about 1 GB each, so do it on a connection you trust.
 
-## Slides
+| Scene | Place | What it teaches |
+|---|---|---|
+| `20241215_185916_33_4001` | Malibu, California — Franklin fire scar | fire, change detection |
+| `20250123_185518_92_4001` | Santa Monica Mountains — after the Palisades fire | change detection (Week 4) |
+| `20250219_053251_31_4001` | Korba / Kusmunda coal mines, India | minerals, target detection, greenhouse gases |
+| `20250223_165546_32_4001` | Usulután, El Salvador — mangroves and estuary | classification, GeoAI, validation |
+| `20250407_035509_25_4001` | Ho Chi Minh City, Vietnam | urban, target detection |
+| `20250511_074311_00_4001` | Al Dhafra coast, UAE — sabkha and shallow water | preprocessing, water |
+| `20250608_091605_90_4001` | Konya, Türkiye — irrigated agriculture | features, workflows |
 
-`slides/` holds **19 PowerPoint decks** (515 slides in total) — one per syllabus session, plus a short ML primer, each with
-**speaker notes** on every content slide and figures lifted straight from the executed notebooks, so what you
-show matches what students run.
+**None of them ship with the repository** — they are about 1 GB each, so neither clone contains them.
+`get_scene()` fetches whatever a notebook needs the first time you run it, and reuses it afterwards.
 
-- Rebuild or edit them in Python: `python tools/decks/deck_<name>.py` (the scripts are readable and diffable).
-- Restyle the whole course by changing the palette at the top of `tools/deckbuild.py`, or simply apply your
-  own PowerPoint theme to the generated files — they are ordinary `.pptx`.
-- `python tools/extract_figures.py` refreshes `slides/figures/` (151 figures, indexed in `figures/index.md`).
-- `python tools/lint_decks.py` checks every deck for overflowing text, oversized tables and missing notes.
+Smaller reference data ships with the material: ESA WorldCover land-cover labels on the Tanager grid, a
+19-spectrum reference library built from these very scenes, an EnMAP subset over Groningen, and an index of
+all 276 Tanager open-data scenes for when you go looking for your own.
 
-## Data
+**Working online and short of bandwidth?** Ask your instructor for the 256 × 256 pixel subsets — about 30 MB
+instead of 1 GB each.
 
-The notebooks use seven Tanager scenes. `hsi_utils.get_scene(scene_id)` looks for the HDF5 file in
-`$TANAGER_DATA_DIR`, `data/`, `../notebooks/` (where the theme notebooks save their downloads) and the current folder,
-and **downloads it from Planet's STAC catalogue if it is missing** (~1 GB per scene).
+---
 
-| Scene ID | Place | Used for | In `../notebooks`? |
-|----------|-------|----------|:------------------:|
-| `20241215_185916_33_4001` | Malibu, California: Franklin fire scar | fire, change detection | ✅ |
-| `20250123_185518_92_4001` | Santa Monica Mountains: after the Palisades fire | change detection (notebook 30) | ⬇️ downloaded on first use (1.3 GB) |
-| `20250219_053251_31_4001` | Korba / Kusmunda coal mines, India | minerals, target detection, GHG | ✅ |
-| `20250223_165546_32_4001` | Usulután, El Salvador: mangroves and estuary | classification, GeoAI, validation | ✅ |
-| `20250407_035509_25_4001` | Ho Chi Minh City, Vietnam | urban, target detection | ✅ |
-| `20250511_074311_00_4001` | Al Dhafra coast, UAE: sabkha and shallow water | preprocessing (mask QA), water | ✅ |
-| `20250608_091605_90_4001` | Konya, Türkiye: irrigated agriculture | features, workflows | ✅ |
+## When something breaks
 
-**Smaller files for online sessions:** `python tools/make_subsets.py` cuts 256 × 256 pixel windows (~30 MB each)
-into `data/subsets/`. `get_scene()` uses a subset only when the full scene is not available. Subset pixel
-coordinates start at the window corner, so notebooks with hard-coded windows need the full scenes.
+**"ModuleNotFoundError: No module named 'matplotlib'" — and you definitely installed it.**
+You are running the wrong kernel. Jupyter's default "Python 3" kernel often points at a different Python than
+your course environment. Kernel → Change kernel → **Hyperspectral course 2026**. This is the single most
+common setup failure; it is not your install that is wrong, it is the kernel.
 
-**Reference labels:** `data/labels/<scene>_worldcover2021_30m.tif` holds, per 30 m pixel, the majority ESA WorldCover
-2021 class of its nine 10 m cells (band 1) and how many of the nine agree (band 2, "purity"). WorldCover is from
-2021 and the images from 2024–2025, so the labels contain some real change and error. The notebooks use this
-deliberately to teach label noise. Regenerate or extend the labels with `hu.make_worldcover_labels(scene)`
-(needs internet).
+**Downloads fail with `SSL: CERTIFICATE_VERIFY_FAILED`.**
+TLS-inspecting proxy. Set `REQUESTS_CA_BUNDLE` and `GDAL_CURL_CA_BUNDLE` to your organisation's CA bundle, as
+above. On Colab this never happens — another reason to prefer it on a restricted network.
 
-**Reference spectral library:** `data/spectral_library/` holds 19 median spectra of homogeneous areas (mangrove,
-irrigated crop, sabkha, burn scar, coal-mine surface, industrial roof, …) selected with WorldCover purity and simple
-spectral rules. Rebuild it with `python tools/build_reference_library.py`. For laboratory spectra, see the USGS
-Spectral Library v7 (`hu.load_usgs_ascii`, notebook 10).
+**A scene "exists" but reading it hangs for ever.**
+In OneDrive or Dropbox the file can be a 0-byte placeholder. Right-click the folder → *Always Keep on This
+Device*, and wait for it to actually download.
 
-## Getting started
+**A GDAL write fails with "Unknown GDAL Error" right after you opened an interactive map.**
+The map libraries set an environment variable that breaks GDAL writes. Restart the kernel, do your exports
+first, and make the maps afterwards.
 
-```bash
-cd hyperspectral_course_notebooks
-python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-jupyter lab
-```
+**The Indian Pines benchmark download fails in the deep-learning notebook.**
+That dataset's host blocks some corporate and conference networks. The notebook is built to carry on without
+it — that section is optional and nothing later depends on it.
 
-Open `10_spectral_signatures_and_libraries.ipynb`. Notebooks import `hsi_utils` from the same folder. On
-**Google Colab**, upload `hsi_utils.py` (and the `data/` folder, if you need labels or the library) next to the
-notebook, and run the `%pip install` line in the setup cell.
+**Everything is just slow.**
+Once the scenes are on disk, most notebooks run in well under two minutes on a laptop CPU. The genuinely slow
+ones are `20_geoai_deep_learning` (~6 minutes — it trains two small networks and runs inference over a whole
+scene) and `30_advanced_analytics` (long, and it pulls one extra 1.3 GB scene the first time). If a notebook
+you expected to be quick is not, you are almost certainly downloading a scene in the background.
 
-**Behind a corporate proxy?** If downloads fail with `SSL: CERTIFICATE_VERIFY_FAILED`, point Python and GDAL
-to your organisation's CA bundle: `export REQUESTS_CA_BUNDLE=/path/ca.pem GDAL_CURL_CA_BUNDLE=/path/ca.pem`.
+Still stuck? Bring it to the next session — and bring the **full error message**, not a description of it.
 
-## Instructor notes
+---
 
-- **Publishing this repository.** `tools/set_repo_url.py <owner>/<repo>` rewrites every Colab badge and
-  bootstrap cell in one go — run it once after creating the repository, then commit. `.gitignore` already keeps
-  out the 1 GB scenes, `outputs/`, and the 46 MB of slide decks; the decks regenerate with
-  `python tools/extract_figures.py` followed by the scripts in `tools/decks/`. Attach them to a GitHub Release
-  if participants need them.
-- **Check your scenes are really on disk.** In a OneDrive folder they can exist as 0-byte placeholders, and the
-  first notebook run then stalls on a multi-gigabyte rehydration. In Finder: right-click the folder →
-  *Always Keep on This Device*.
-- **`outputs/` is example output** (93 MB), including the QGIS exports the lab uses. Delete it for a lean copy;
-  the notebooks and `tools/export_for_qgis.py` regenerate everything.
-- **The QGIS lab's GUI steps are written from the EnMAP-Box 3.17 / QGIS 3.40 documentation but were not
-  clicked through on the build machine** (the network blocked every QGIS download). The data side *is* verified.
-  Walk it once before teaching and add screenshots where marked.
-- **Solutions and answer keys** are in `exercises/solutions/` and `quizzes/answers/`. Remove these folders
-  before sharing the material with students if you want to release them later.
-- The course notebooks ship **with outputs**, so students can read them before running them. The exercise student
-  versions ship without outputs.
-- Every notebook runs offline once the scenes are local, except `16_scene_finder.ipynb` (thumbnails, catalogue
-  refresh), label regeneration, the methane box in notebook 14, and the optional cells flagged in the notebooks.
-- Measured runtimes on a laptop CPU (10 cores, no GPU): notebooks 10–16, 21, 31 take 12 s – 1.5 min each;
-  `30_advanced_analytics` 1.5 min (plus a one-off 1.3 GB download of the January Malibu scene);
-  `20_geoai_deep_learning` about 6 minutes (it trains two small CNNs and runs tiled inference over a full scene).
-- Everything was executed end to end before release: every notebook here ships with its outputs and no errors,
-  and `pytest tests/ -q` passes (23 tests).
-- **Results the notebooks are built around** (useful when planning a session):
-  - 15 / 20: on El Salvador land cover, macro-F1 rises 0.861 (random forest) → 0.892 (1D-CNN) → 0.925 (patch CNN),
-    but the same model scores ~0.3 on Ho Chi Minh City — the domain-shift lesson.
-  - 15: the full 352-band spectrum barely beats simulated Sentinel-2 for broad land cover (0.912 vs 0.909);
-    the hyperspectral gain shows up in the narrow-band work of notebooks 13 and 14 instead.
-  - 14: in the implanted-target test, ACE detects 55 % of 10 %-fill targets at a 1 % false-alarm rate, SAM ~1 %.
-  - 30: the December→January Malibu pair recovers the new (Palisades) burn scar, ~2 500 ha, and the refinement
-    chain cuts false alarms from 4.7 % to 0 % while keeping ~90 % of the scar.
-  - 11 / 16: Tanager's cloud mask has false positives over bright desert — Al Dhafra, Riyadh and Al Mahrah are all
-    flagged 50–75 % "cloud" under a clear sky. Several notebooks therefore read those scenes with `cloud=False`.
+## Where to look things up
 
-- **Known issues in the theme notebooks (`../notebooks`)** were left untouched on purpose:
-  - `06_ecosystem_health_water_qualityy.ipynb` (filename typo) is still largely a copy of `05`: same scenes and
-    indices, and the figure title still reads "Ecosystem Health & Blue Carbon". The water-quality exercises in
-    `exercises/ex_06_…` add the missing water masking and FAI.
-  - `05` lists `20250223_165546_32_4001` twice in `item_ids`.
-  - The theme README describes the `02` scene as Riyadh, but it is Ho Chi Minh City. It also refers to
-    `00_data_exploration_starter.ipynb` and a `docs/` folder that do not exist.
+| | |
+|---|---|
+| Detailed reference for every session | [`INSTRUCTOR.md`](INSTRUCTOR.md) |
+| Day-by-day plan with timings | [`teaching_plan.md`](teaching_plan.md) |
+| The six application themes | [`813-hyperspectral-hackathon`](https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon) |
+| Lecture slides, all sessions | `slides/` |
+| The shared helper functions you will use constantly | `hsi_utils.py` — it is documented; read it |
+| QGIS / EnMAP-Box desktop lab | [`qgis_lab_hyperspectral.md`](qgis_lab_hyperspectral.md) |
 
-## Data credits
+---
 
-- Tanager: *"Tanager STAC Data, available at www.planet.com/data/stac © 2025 Planet Labs PBC"*, CC-BY-4.0
-  (use the acquisition year of each scene).
-- ESA WorldCover 10 m 2021 v200, © ESA WorldCover project / contains modified Copernicus Sentinel data (2021),
-  CC-BY 4.0, accessed via Microsoft Planetary Computer.
+## Credits and licence
+
+- **Tanager imagery:** *"Tanager STAC Data, available at www.planet.com/data/stac © 2025 Planet Labs PBC"* —
+  CC-BY-4.0. Cite it with the acquisition year of the scene you used.
+- **Land-cover labels:** ESA WorldCover 10 m 2021 v200, © ESA WorldCover project / contains modified
+  Copernicus Sentinel data (2021), CC-BY-4.0.
+- **Laboratory spectra:** USGS Spectral Library Version 7.
+
+Course material for the **Space Academy 2026** programme, an initiative of the **UAE Space Agency** and
+**Space42**.

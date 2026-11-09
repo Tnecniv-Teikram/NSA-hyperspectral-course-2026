@@ -1,5 +1,5 @@
 # Space Academy 2026 — Hyperspectral course notebooks (10–31, exercises, app)
-# Python 3.9+   ·   pip install -r requirements.txt
+# Python 3.11+ (hypercoast needs it)   ·   pip install -r requirements.txt
 
 # core
 numpy
