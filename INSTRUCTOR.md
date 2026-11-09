@@ -3,7 +3,7 @@
 *Participants start at [`README.md`](README.md); this page is the teaching-side detail.*
 
 Course notebooks, **lecture slides**, exercises, quizzes, assignments, a **QGIS lab** and project templates for the
-four-week **Space Academy 2026 hyperspectral course** (3–25 November 2026).
+three-week **Space Academy 2026 hyperspectral course** (9–26 November 2026).
 Start with **[`teaching_plan.md`](teaching_plan.md)** — it maps every session to its deck, notebook and homework,
 with timings. They complement the theme starter notebooks `00`–`06` in
 [`../Starting_notebooks`](../Starting_notebooks) (Arab Youth Space Hackathon: 813 Challenge), which cover data access and one
@@ -58,52 +58,52 @@ to imaging spectroscopy and everything needed to train and validate a model.
 
 📘 = lecture, 🔧 = practical. "Theme notebooks" are in `../Starting_notebooks`; everything else is in this folder.
 
-### Week 1 · 2–5 Nov 2026 (onsite and online)
+### Week 1 · Mon 9 – Thu 12 Nov 2026 — six sessions
 
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Course orientation and objectives | 📘 | `w1a_course_orientation` | this README · `assignments/final_project_brief.md` | — |
-| Introduction to hyperspectral Earth observation | 📘 | `w1b_intro_hyperspectral_eo` | `10_spectral_signatures_and_libraries.ipynb` (§1–2) | `quizzes/quiz_w1a_intro_spectral_signatures.md` |
-| Spectral signatures, sensor concepts, and use cases | 📘 | `w1c_spectral_signatures_sensors` | `10_spectral_signatures_and_libraries.ipynb` | `quizzes/quiz_w1a_…` |
-| Hyperspectral data access, visualization, and exploration | 🔧 | `w1d_data_access_exploration` | `00_EO_data_quickstart_notebook.ipynb` (Mon, skim the Sentinel-2 half) + theme notebooks `01`–`06` (Wed); `09_numpy_for_hyperspectral.ipynb` as pre-work | `exercises/ex_00_…`, `exercises/ex_01`–`ex_06` |
-| Preprocessing concepts for hyperspectral data | 📘🔧 | `w1e_preprocessing` | `11_preprocessing.ipynb` | `quizzes/quiz_w1b_preprocessing.md` · **`assignments/assignment_w1_scene_exploration.md`** |
+| Session | Type | Slides | Notebook(s) | Quiz / project |
+|---------|:----:|--------|-------------|----------------|
+| 1. Kickoff, opening speech, course orientation and objectives | 📘 | `w1a_course_orientation` | this README · `assignments/final_project_brief.md` | — |
+| 2. Course objectives + mini project, gIQ platform and course platform | 📘 | *run by its own presenter — no deck here* | — | mini project introduced |
+| 3. Introduction to hyperspectral Earth observation | 📘 | `w1b_intro_hyperspectral_eo` | `10_spectral_signatures_and_libraries.ipynb` (§1–2) | `quizzes/quiz_w1a_…` |
+| 4. Spectral signatures, sensor concepts, and use cases | 📘 | `w1c_spectral_signatures_sensors` | `10_spectral_signatures_and_libraries.ipynb` | `quizzes/quiz_w1a_…` |
+| 5. Hyperspectral data access, visualization, and exploration | 🔧 | `w1d_data_access_exploration` | `00_EO_data_quickstart_notebook.ipynb` + theme notebooks `01`–`06`; `09_numpy_for_hyperspectral.ipynb` as pre-work | `exercises/ex_00`–`ex_06` · pick a theme |
+| 6. Preprocessing concepts for hyperspectral data | 📘🔧 | `w1e_preprocessing` | `11_preprocessing.ipynb` | `quizzes/quiz_w1b_preprocessing.md` |
 
-*Every week runs **Monday to Thursday** — there are no Friday sessions. A 2-hour **field spectrometer session**
-sits on Tuesday 3 Nov alongside notebook 10; see `teaching_plan.md` for the run sheet.*
+*Monday and Tuesday each carry two sessions. An optional 2-hour **field spectrometer session** fits Tuesday
+10 Nov alongside notebook 10; the run sheet is in `teaching_plan.md`.*
 
-### Week 2 · 9–12 Nov 2026 (online)
+### Week 2 · Mon 16 – Thu 19 Nov 2026 — five sessions
 
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Hyperspectral image processing workflows | 📘🔧 | `w2a_processing_workflows` | `12_processing_workflow.ipynb` · `hsi_utils.py` | "Your turn" in notebook |
-| Feature extraction and dimensionality reduction | 📘 | `w2b_feature_extraction` | `13_feature_extraction_dim_reduction.ipynb` | `quizzes/quiz_w2_features_detection_classification.md` |
-| Material discrimination and target detection | 📘🔧 | `w2c_material_discrimination_detection` | `14_material_discrimination_target_detection.ipynb` | "Your turn" in notebook |
-| Classification approaches for hyperspectral data | 📘🔧 | `w2d0_ml_primer_for_eo` (20 min) + `w2d_classification` | `15_classification_classical.ipynb` | **`assignments/assignment_w2_detection_classification.md`** |
-| Project scoping and use case definition | 🔧 | `w2e_project_scoping` | `16_scene_finder.ipynb` | `templates/project_scoping_template.md` |
-| *(optional extra day)* Hyperspectral data in HyperCoast and QGIS | 📘🔧 | `wx_qgis_hypercoast` | `17_hypercoast_tanager_enmap.ipynb` + `qgis_lab_hyperspectral.md` | "Your turn" in notebook |
+| Session | Type | Slides | Notebook(s) | Quiz / project |
+|---------|:----:|--------|-------------|----------------|
+| 7. Hyperspectral image processing workflows | 📘🔧 | `w2a_processing_workflows` | `12_processing_workflow.ipynb` · `hsi_utils.py` | "Your turn" in notebook |
+| 8. Feature extraction and dimensionality reduction | 📘 | `w2b_feature_extraction` | `13_feature_extraction_dim_reduction.ipynb` | `quizzes/quiz_w2_…` |
+| 9. Material discrimination and target detection | 📘🔧 | `w2c_material_discrimination_detection` | `14_material_discrimination_target_detection.ipynb` | "Your turn" in notebook |
+| 10. Classification approaches for hyperspectral data | 📘🔧 | `w2d0_ml_primer_for_eo` (20 min) + `w2d_classification` | `15_classification_classical.ipynb` | — |
+| 11. Project scoping and use case definition | 🔧 | `w2e_project_scoping` | `16_scene_finder.ipynb` | `templates/project_scoping_template.md` — canvas due Mon 23 |
 
-### Week 3 · 16–19 Nov 2026 (online)
+### Week 3 · Mon 23 – Thu 26 Nov 2026 — four sessions
 
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| GeoAI methods for hyperspectral applications | 📘 | `w3a_geoai_methods` | `20_geoai_deep_learning.ipynb` (§ overview) | `quizzes/quiz_w3_geoai_validation.md` |
-| AI-assisted hyperspectral classification and mapping | 🔧 | `w3b_ai_assisted_mapping` | `20_geoai_deep_learning.ipynb` | "Your turn" in notebook |
-| Validation methods and accuracy assessment | 📘🔧 | `w3c_validation_accuracy` | `21_validation_accuracy_assessment.ipynb` | `quizzes/quiz_w3_…` |
-| Applied project development workshop | 🔧 | `w3d_project_workshop_qa` | `templates/project_template.ipynb` | **`assignments/assignment_w3_validated_map.md`** |
-| Interim project feedback and quality assurance | 📘🔧 | `w3d_project_workshop_qa` | — | `templates/interim_qa_checklist.md` |
+| Session | Type | Slides | Notebook(s) | Quiz / project |
+|---------|:----:|--------|-------------|----------------|
+| 12. GeoAI methods for hyperspectral applications | 📘 | `w3a_geoai_methods` | `20_geoai_deep_learning.ipynb` (§ overview) | `quizzes/quiz_w3_…` · scoping canvas due |
+| 13. AI-assisted hyperspectral classification and mapping | 🔧 | `w3b_ai_assisted_mapping` | `20_geoai_deep_learning.ipynb` | teams apply it to their own scene |
+| 14. Validation methods and accuracy assessment | 📘🔧 | `w3c_validation_accuracy` | `21_validation_accuracy_assessment.ipynb` | afternoon: project build time |
+| 15. Final graduation project submission & presentation | 🔧📘 | `w4c_presentation_and_evaluation` | `templates/project_template.ipynb` | `templates/submission_checklist.md` · `templates/evaluation_rubric.md` |
 
-### Week 4 · 23–26 Nov 2026 (onsite and online)
-
-| Session | Type | Slides | Notebook(s) | Exercises / quiz / assignment |
-|---------|:----:|--------|-------------|-------------------------------|
-| Advanced hyperspectral analytics and solution refinement | 📘🔧 | `w4a_advanced_analytics` | `30_advanced_analytics.ipynb` | "Your turn" in notebook |
-| Final project implementation and testing | 🔧 | `w4b_implementation_and_testing` | `31_from_notebook_to_product.ipynb` · `app/streamlit_app.py` · `tests/` | — |
-| Presentation preparation and project rehearsal | 🔧 | `w4c_presentation_and_evaluation` | — | `templates/presentation_template.md` |
-| Final graduation project submission | 🔧 | `w4c_presentation_and_evaluation` | — | `templates/submission_checklist.md` |
-| Final evaluation and feedback | 📘 | `w4c_presentation_and_evaluation` | — | `templates/evaluation_rubric.md` |
-
-**Assessment:** assignment W1 10 % · W2 15 % · W3 15 % · final project 60 % (see `assignments/final_project_brief.md`).
+**Assessment: the mini project is 100 %**, scored with `templates/evaluation_rubric.md` (Validity 30 ·
+Relevance 20 · Impact 20 · Creativity 15 · Presentation 15). See `assignments/final_project_brief.md`.
 Quizzes are formative and ungraded.
+
+### Not taught in this run (kept in the repository)
+
+| Material | Note |
+|---|---|
+| `17_hypercoast_tanager_enmap.ipynb`, `qgis_lab_hyperspectral.md`, `wx_qgis_hypercoast` | self-study |
+| `30_advanced_analytics.ipynb`, `w4a_advanced_analytics` | self-study — change detection, uncertainty, scaling |
+| `31_from_notebook_to_product.ipynb`, `w4b_implementation_and_testing` | self-study — packaging, tests, the app |
+| `w3d_project_workshop_qa`, `templates/interim_qa_checklist.md` | not scheduled; the checklist is still a useful pre-submission self-check |
+| `assignments/assignment_w1`–`w3` | not used — the mini project is the whole assessment |
 
 ---
 
@@ -128,8 +128,8 @@ hyperspectral_course_notebooks/
 ├── 17_hypercoast_tanager_enmap.ipynb            Week 2 (optional session, pairs with the QGIS lab)
 ├── 20_geoai_deep_learning.ipynb                 Week 3
 ├── 21_validation_accuracy_assessment.ipynb      Week 3
-├── 30_advanced_analytics.ipynb                  Week 4
-├── 31_from_notebook_to_product.ipynb            Week 4
+├── 30_advanced_analytics.ipynb                  self-study
+├── 31_from_notebook_to_product.ipynb            self-study
 │
 ├── teaching_plan.md  ← day-by-day plan: which deck, notebook and homework per session
 ├── qgis_lab_hyperspectral.md  ← 3-hour desktop lab (EnMAP-Box + HyperCoast plugin)

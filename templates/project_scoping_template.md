@@ -87,13 +87,15 @@ Draw the processing chain as boxes and arrows. A photo of a whiteboard is fine.
 | No reference data | | | visual interpretation plus VHR imagery, cross-sensor consistency |
 | Method does not separate the classes | | | merge classes, add SWIR features, switch to unmixing |
 
-## 11. Timeline (weeks 2–4)
+## 11. Timeline
 
-| Week | Milestone |
+| When | Milestone |
 |------|-----------|
-| 2 | Scope approved, data downloaded, first quicklooks |
-| 3 | Working method on one scene, first validation numbers → interim review |
-| 4 | Refinement, final validation, product mock-up, presentation |
+| Thu 19 Nov | This canvas drafted in the scoping session |
+| Mon 23 Nov | Canvas due · data downloaded, first quicklooks |
+| Tue 24 Nov | Working method on one scene |
+| Wed 25 Nov | Build afternoon — final validation numbers |
+| Thu 26 Nov | Submission in the morning, presentation in the afternoon |
 
 ---
 *Data: Tanager — CC-BY-4.0 © Planet Labs PBC. Credit every dataset you use.*

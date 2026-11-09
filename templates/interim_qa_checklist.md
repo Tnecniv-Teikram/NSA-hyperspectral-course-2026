@@ -1,10 +1,13 @@
-# Interim project review — quality-assurance checklist
+# Project quality-assurance checklist
 
-**Space Academy 2026 · Hyperspectral course · Week 3 — Interim project feedback and quality assurance**
+**Space Academy 2026 · Hyperspectral course · self-check before you submit**
 
-Use this checklist for peer review (swap notebooks with another team) and for the instructor review.
+*There is no scheduled interim review in the three-week run of the course. Use this checklist yourself, and
+for peer review if you swap notebooks with another team — it is the fastest way to find the things that cost
+marks under the Validity criterion.*
+
 Mark each item ✅ (done), ⚠️ (partly) or ❌ (missing), and add one line of comment. Anything marked ❌ in
-sections A–C must be fixed before Week 4.
+sections A–C should be fixed before you submit on Thursday 26 November.
 
 Team: ______________________   Reviewer: ______________________   Date: ___________
 
@@ -54,5 +57,5 @@ Team: ______________________   Reviewer: ______________________   Date: ________
 ## E. Reviewer summary
 
 - **Biggest strength:**
-- **Most important fix before Week 4:**
+- **Most important fix before submission:**
 - **One idea to make the result more convincing for the end user:**

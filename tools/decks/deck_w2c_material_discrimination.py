@@ -10,7 +10,7 @@ d = Deck("Material discrimination and target detection",
          "Week 2 · Session 3",
          notebook="14_material_discrimination_target_detection.ipynb",
          subtitle="What is this pixel made of — and what is hiding inside it?",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 d.objectives([
     "Compare spectra with **SAM** and **SID**, and explain why both ignore brightness",

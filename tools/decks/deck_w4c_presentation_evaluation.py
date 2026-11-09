@@ -1,14 +1,17 @@
-"""Week 4 · Sessions 3–5 — Presentation preparation, submission and final evaluation."""
+"""Week 3 · Session 15 — Mini project submission, presentation and final evaluation.
+
+The file keeps its w4c name so the deck filename and every reference to it stay stable.
+"""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from deckbuild import Deck  # noqa: E402
 
 d = Deck("Presenting, submitting and being evaluated",
-         "Week 4 · Sessions 3–5",
+         "Week 3 · Session 15",
          notebook="templates/presentation_template.md",
          subtitle="Twelve minutes to convince a room that your map can be trusted and used",
-         week="Week 4 · 23–26 November 2026")
+         week="Week 3 · 23–26 November 2026")
 
 d.objectives([
     "Structure a 12-minute technical presentation that a mixed audience can follow",

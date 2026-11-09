@@ -8,7 +8,7 @@ d = Deck("Preprocessing concepts for hyperspectral data",
          "Week 1 · Session 5",
          notebook="11_preprocessing.ipynb",
          subtitle="Which pixels and which bands deserve your trust",
-         week="Week 1 · 2–5 November 2026")
+         week="Week 1 · 9–12 November 2026")
 
 d.objectives([
     "Place a product on the chain radiance → TOA reflectance → surface reflectance",
@@ -143,7 +143,7 @@ d.bullets("Your masking decision, written down", [
     "**Always** overlay the mask on an RGB image before deciding",
     "Record the decision and the reason in your project report — a reviewer will ask",
 ], kicker="what to do about it",
-   notes="Tie this to the interim QA checklist (templates/interim_qa_checklist.md), item B2, which asks exactly "
+   notes="Tie this to the QA checklist (templates/interim_qa_checklist.md), item B2, which asks exactly "
          "this question. Students who skip it lose marks under Validity in the rubric.")
 
 d.section("3. Bad bands", "Which of the 426 bands carry information?")
@@ -315,7 +315,7 @@ d.recap([
     "Subset early: 7.4 MB travels, 1.23 GB does not",
 ], next_up="Week 2 — Hyperspectral image processing workflows: turning these decisions into a pipeline",
    notes="Close on the mask slide: the single habit to take away is to look at the data before trusting a label. "
-         "Point them to quizzes/quiz_w1b_preprocessing.md and assignments/assignment_w1_scene_exploration.md, due at the start of week 2.")
+         "Point them to quizzes/quiz_w1b_preprocessing.md, and tell them these are the checks their mini project will be marked on.")
 
 d.references([
     "Savitzky, A. & Golay, M.J.E. (1964). Smoothing and differentiation of data by simplified least squares procedures. Analytical Chemistry 36, 1627–1639.",
@@ -323,7 +323,7 @@ d.references([
     "Gao, B.-C., Montes, M.J., Davis, C.O. & Goetz, A.F.H. (2009). Atmospheric correction algorithms for hyperspectral remote sensing data of land and ocean. RSE 113, S17–S24.",
     "Thompson, D.R. et al. (2018). Optimal estimation for imaging spectrometer atmospheric correction (ISOFIT). RSE 216, 355–373.",
     "Green, A.A. et al. (1988). A transformation for ordering multispectral data in terms of image quality with implications for noise removal. IEEE TGRS 26, 65–74.",
-    "Course material: notebook 11_preprocessing.ipynb · quizzes/quiz_w1b_preprocessing.md · assignments/assignment_w1_scene_exploration.md",
+    "Course material: notebook 11_preprocessing.ipynb · quizzes/quiz_w1b_preprocessing.md",
 ])
 
 d.save("w1e_preprocessing.pptx")

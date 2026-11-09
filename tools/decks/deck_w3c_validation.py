@@ -10,7 +10,7 @@ d = Deck("Validation methods and accuracy assessment",
          "Week 3 · Session 3",
          notebook="21_validation_accuracy_assessment.ipynb",
          subtitle="How good is your map, really — and how do you defend that number",
-         week="Week 3 · 16–19 November 2026")
+         week="Week 3 · 23–26 November 2026")
 
 d.objectives([
     "Build and read an error matrix, and compute user's, producer's, F1 and IoU correctly",
@@ -252,7 +252,7 @@ d.table("Minimum validation reporting for the project", ["Report", "Because"], [
     ["Three failure cases, with the spectra", "Turns errors into understanding"],
 ], kicker="rubric: Validity, 30 %", col_widths=[3, 3],
    notes="This table is effectively the mark scheme for the largest rubric criterion. Assignment W3 asks for "
-         "exactly these items, due before the interim review.")
+         "exactly these items — use it as your pre-submission self-check.")
 
 d.handover("21_validation_accuracy_assessment.ipynb", [
     "Build the error matrix and compute UA, PA, F1 and IoU by hand, then check against scikit-learn",
@@ -261,7 +261,7 @@ d.handover("21_validation_accuracy_assessment.ipynb", [
     "Validate a continuous product with bias, RMSE and a Bland–Altman plot",
 ], minutes=100,
    notes="The area-adjusted section is the hard part; pair students up. Then apply it to their own project "
-         "map for assignment W3.")
+         "map for your mini project.")
 
 d.recap([
     "Sampling design, response design and analysis — all three, or the number means little",
@@ -270,7 +270,7 @@ d.recap([
     "**Spatially** independent splits, always; random pixel splits inflate accuracy",
     "Quote **area-adjusted** areas with confidence intervals, not pixel counts",
     "For continuous products, R² without bias and RMSE is a half-truth",
-], next_up="Session 4 — Applied project development workshop, then the interim QA review",
+], next_up="Project build time this afternoon, then submission and presentations tomorrow",
    notes="Close on the honest-number slide: 0.763 became 0.595 and the map did not change.")
 
 d.references([

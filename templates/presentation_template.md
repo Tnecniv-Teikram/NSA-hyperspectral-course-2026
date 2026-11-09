@@ -1,6 +1,6 @@
 # Final presentation template (10–12 slides, 12 minutes + 5 minutes Q&A)
 
-**Space Academy 2026 · Hyperspectral course · Week 4 — Presentation preparation and project rehearsal**
+**Space Academy 2026 · Hyperspectral course · Thursday 26 November — mini project presentation**
 
 Build your slides in any tool (PowerPoint, Google Slides, Keynote, Quarto/reveal.js) and export them to PDF.
 One message per slide. Titles are full sentences that state the takeaway, e.g. *"Mangrove loss is concentrated

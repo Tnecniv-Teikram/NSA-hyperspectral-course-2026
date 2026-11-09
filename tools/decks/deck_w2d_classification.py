@@ -10,7 +10,7 @@ d = Deck("Classification approaches for hyperspectral data",
          "Week 2 · Session 4",
          notebook="15_classification_classical.ipynb",
          subtitle="From clusters to trained models — and how to know the accuracy is real",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 # Run the 20-minute primer first: this session assumes the ML vocabulary it introduces.
 d.prs.slides[0].notes_slide.notes_text_frame.text = (
@@ -289,7 +289,7 @@ d.handover("15_classification_classical.ipynb", [
     "Rerun the label-noise experiment and explain the training/test asymmetry in your own words",
     "Export your best map as a COG with a confidence band",
 ], minutes=120,
-   notes="Then set assignments/assignment_w2_detection_classification.md, due at the start of Week 3. "
+   notes="Point them at their mini project: this is the method most teams will build on. "
          "Warn them the SVM prediction step over the full window takes about half a minute.")
 
 d.recap([
@@ -308,7 +308,7 @@ d.references([
     "Roberts, D.R. et al. (2017). Cross-validation strategies for data with spatial, temporal, phylogenetic or hierarchical structure. Ecography 40, 913–929.",
     "Ploton, P. et al. (2020). Spatial validation reveals poor predictive performance of large-scale ecological mapping models. Nature Communications 11, 4540.",
     "Zanaga, D. et al. (2022). ESA WorldCover 10 m 2021 v200 (CC-BY 4.0).",
-    "Course material: notebook 15, quiz quizzes/quiz_w2_features_detection_classification.md, assignment assignments/assignment_w2_detection_classification.md",
+    "Course material: notebook 15 · quiz quizzes/quiz_w2_features_detection_classification.md · assignments/final_project_brief.md",
 ])
 
 d.save("w2d_classification.pptx")

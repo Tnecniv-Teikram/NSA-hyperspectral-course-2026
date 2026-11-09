@@ -8,7 +8,7 @@ d = Deck("AI-assisted classification and mapping",
          "Week 3 · Session 2",
          notebook="20_geoai_deep_learning.ipynb",
          subtitle="Training, inference and honest maps — the practical half of GeoAI",
-         week="Week 3 · 16–19 November 2026")
+         week="Week 3 · 23–26 November 2026")
 
 d.objectives([
     "Prepare a labelled dataset from WorldCover pure pixels, and know why purity matters",
@@ -187,7 +187,7 @@ d.handover("20_geoai_deep_learning.ipynb", [
    notes="Circulate during training runs — that is when questions come. Students on slow machines should "
          "reduce the training fraction rather than skip sections. The random-split exercise is the one that "
          "changes behaviour: accuracy jumps several points and they see how easy inflation is. "
-         "Quiz: quizzes/quiz_w3_geoai_validation.md · assignment: assignments/assignment_w3_validated_map.md.")
+         "Quiz: quizzes/quiz_w3_geoai_validation.md. Teams should now run this on their own scene.")
 
 d.recap([
     "Labels are a **map, not truth** — filter for purity and say what that costs",

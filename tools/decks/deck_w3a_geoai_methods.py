@@ -10,7 +10,7 @@ d = Deck("GeoAI methods for hyperspectral applications",
          "Week 3 · Session 1",
          notebook="20_geoai_deep_learning.ipynb",
          subtitle="Deep learning on spectra and patches — what it adds, and where it breaks",
-         week="Week 3 · 16–19 November 2026")
+         week="Week 3 · 23–26 November 2026")
 
 d.objectives([
     "Choose between pixel, patch and scene models for a hyperspectral task",

@@ -6,21 +6,21 @@ from deckbuild import Deck  # noqa: E402
 
 d = Deck("Course orientation and objectives",
          "Week 1 · Session 1",
-         subtitle="Four weeks from spectra to a validated, deliverable product",
+         subtitle="Three weeks from spectra to a validated, deliverable mini project",
          week="Space Academy 2026 · Hyperspectral course")
 
 d.objectives([
-    "Describe how the four weeks fit together and what is expected each week",
+    "Describe how the three weeks fit together and what is expected each week",
     "Find your way around the course material: notebooks, exercises, quizzes, templates",
     "Set up the toolchain and open your first Tanager scene",
-    "State how you will be assessed, and what the final project must contain",
+    "State how you will be assessed, and what the mini project must contain",
 ], notes="Keep this session short and practical. The goal is that nobody is blocked on setup "
          "tomorrow morning. Finish with everyone having run notebook 00 at least once.")
 
 d.section("1. Why this course", "Imaging spectroscopy is arriving in the region")
 
 d.callout("Most satellites tell you how bright a surface is.\nAn imaging spectrometer tells you what it is made of.",
-          "That shift — from brightness to composition — is what the next four weeks are about, and it is "
+          "That shift — from brightness to composition — is what the next three weeks are about, and it is "
           "why the UAE and its partners are investing in hyperspectral missions.",
           kicker="the premise",
           notes="Anchor the course in a concrete example: two fields can have identical NDVI while one is "
@@ -36,14 +36,14 @@ d.bullets("Who this course is for", [
    notes="Ask for a show of hands: who has used Sentinel-2, who has trained a classifier, who has "
          "worked with field spectra. Use the answers to calibrate the depth of the next two sessions.")
 
-d.table("The four weeks", ["Week", "Dates", "Mode", "Focus"], [
-    ["1", "2–5 Nov 2026", "onsite + online", "Concepts, data access, preprocessing"],
-    ["2", "9–12 Nov 2026", "online", "Workflows, features, detection, classification, project scoping"],
-    ["3", "16–19 Nov 2026", "online", "GeoAI, validation, project development, interim review"],
-    ["4", "23–26 Nov 2026", "onsite + online", "Advanced analytics, implementation, presentation, evaluation"],
+d.table("The three weeks", ["Week", "Dates", "Sessions", "Focus"], [
+    ["1", "9–12 Nov 2026", "6", "Concepts, spectral signatures, data access, preprocessing"],
+    ["2", "16–19 Nov 2026", "5", "Workflows, features, detection, classification, project scoping"],
+    ["3", "23–26 Nov 2026", "4", "GeoAI, validation, and your mini project"],
 ], kicker="shape of the course",
-   notes="Weeks 2 and 3 are one session per day; weeks 1 and 4 are denser, with five sessions across "
-         "four days, Monday to Thursday. Warn students that project work runs in parallel from week 2 onwards.")
+   notes="Monday to Thursday every week; no Friday sessions. Week 1 is the dense one — today and tomorrow "
+         "each carry two sessions. Week 3 is deliberately lighter so there is room to build the project. "
+         "Warn them that project work runs in parallel from week 2 onwards.")
 
 d.bullets("By the end you will be able to", [
     "Explain hyperspectral principles and read a spectrum physically, not just statistically",
@@ -53,7 +53,7 @@ d.bullets("By the end you will be able to", [
     "**Validate** results honestly and communicate them to a non-technical user",
 ], kicker="learning outcomes",
    notes="These are the syllabus outcomes in plain language. Point out that 'validate honestly' carries "
-         "the heaviest weight in the final rubric — 30 of 100 marks.")
+         "the heaviest weight in the rubric — 30 of 100 marks.")
 
 d.section("2. The material", "Two notebook families, plus everything around them")
 
@@ -131,16 +131,15 @@ d.bullets("Ground rules", [
 d.section("4. Assessment and the project", "What you hand in, and how it is marked")
 
 d.table("Assessment", ["Component", "When", "Weight"], [
-    ["Assignment W1 — scene exploration report", "start of week 2", "10 %"],
-    ["Assignment W2 — detection and classification", "start of week 3", "15 %"],
-    ["Assignment W3 — a validated AI map", "interim review, week 3", "15 %"],
-    ["Final graduation project", "25 November", "60 %"],
+    ["Mini project — submission and presentation", "Thu 26 November", "100 %"],
     ["Quizzes", "after lecture sessions", "formative, not graded"],
+    ["Exercises and \u201cYour turn\u201d sections", "throughout", "not graded — but they are the practice"],
 ], col_widths=[4, 2, 1], kicker="marks",
-   notes="Point out that the three assignments are stepping stones to the project, not extra work: each "
-         "one produces a component the final submission needs anyway.")
+   notes="Say it plainly: there is one assessed piece of work and this is it. That makes starting early "
+         "more important, not less — there is no weekly assignment to force the pace, and only one "
+         "scheduled build afternoon, on Wednesday 25 November.")
 
-d.table("How the final project is marked", ["Criterion", "Weight", "The question it asks"], [
+d.table("How the mini project is marked", ["Criterion", "Weight", "The question it asks"], [
     ["Validity", "30", "Is the result scientifically sound and properly validated?"],
     ["Relevance", "20", "Does it answer the problem, completely and reproducibly?"],
     ["Impact", "20", "Who benefits, and by how much?"],
@@ -148,17 +147,18 @@ d.table("How the final project is marked", ["Criterion", "Weight", "The question
     ["Presentation", "15", "Is the story clear and the delivery convincing?"],
 ], col_widths=[2, 1, 4], kicker="the rubric",
    notes="These are the five 813 Challenge criteria. Tell students to read templates/evaluation_rubric.md "
-         "in week 2, not in week 4 — the level descriptors tell them exactly what 'excellent' looks like.")
+         "this week, not in the last week — the level descriptors tell them exactly what 'excellent' looks like.")
 
-d.bullets("Project milestones", [
-    "**Week 2, Thu 12 Nov** — scoping canvas: problem, user, area, data, validation plan",
-    "**Week 3, Tue–Wed** — working method on one scene, in the project notebook template",
-    "**Week 3, Thu 19 Nov** — interim review: first validated map plus the QA checklist",
-    "**Week 4, Mon–Tue** — refinement, uncertainty, pipeline, tests, product mock-up",
-    "**Week 4, Thu 26 Nov** — submission and a 12-minute presentation",
+d.bullets("Mini project milestones", [
+    "**Wed 11 Nov** — pick your theme and a candidate scene",
+    "**Thu 19 Nov** — scoping canvas drafted in the session: problem, user, area, data, validation plan",
+    "**Mon 23 Nov** — scoping canvas due",
+    "**Wed 25 Nov, afternoon** — build time, with instructors on hand",
+    "**Thu 26 Nov** — submission in the morning, 12-minute presentation in the afternoon",
 ], kicker="from idea to submission",
-   notes="Emphasise that scoping happens in week 2, not week 4. Teams that pick their area and check data "
-         "availability early are the ones that finish.")
+   notes="Emphasise that there is exactly one scheduled build afternoon. Teams that pick a theme this week "
+         "and scope it by the 19th are the ones that finish; the rest of the building happens in their own "
+         "time. Scope small: one scene, one question, properly validated.")
 
 d.handover("00_EO_data_quickstart_notebook.ipynb", [
     "Install the requirements and check that `import hsi_utils` works",
@@ -170,18 +170,18 @@ d.handover("00_EO_data_quickstart_notebook.ipynb", [
          "companion exercise set for this notebook.")
 
 d.recap([
-    "Four weeks: concepts and preprocessing, methods, GeoAI and validation, then the project",
-    "Theme notebooks 00–06 for applications; method notebooks 10–31 for techniques",
+    "Three weeks: concepts and preprocessing, then methods, then GeoAI, validation and your project",
+    "Theme notebooks 00–06 for applications; method notebooks 09–21 in class, 30–31 for self-study",
     "Everything runs on a laptop; `hsi_utils.py` handles the file plumbing",
-    "60 % of the mark is the project — and **validity carries the most weight**",
-    "Scoping starts in week 2: pick your problem and check the data early",
-], next_up="Session 2 — Introduction to hyperspectral Earth observation",
+    "The mini project is **100 %** of the mark — and **validity carries the most weight**",
+    "Pick your theme this week and scope it by 19 November — there is one build afternoon",
+], next_up="Session 2 — Course objectives, the mini project, and the gIQ and course platforms",
    notes="Close by asking each person to name, in one sentence, a problem from their own work that they "
-         "would like to attack. Those sentences become project ideas in week 2.")
+         "would like to attack. Those sentences become mini-project ideas this week.")
 
 d.references([
     "Course README and folder map — README.md (instructor detail: INSTRUCTOR.md)",
-    "Final project brief — assignments/final_project_brief.md",
+    "Mini project brief — assignments/final_project_brief.md",
     "Evaluation rubric — templates/evaluation_rubric.md",
     "Project scoping canvas — templates/project_scoping_template.md",
     "Planet Tanager open data (CC-BY-4.0) — www.planet.com/data/stac",

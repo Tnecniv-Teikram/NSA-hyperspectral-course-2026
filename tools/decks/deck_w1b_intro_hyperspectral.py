@@ -14,7 +14,7 @@ d = Deck("Introduction to hyperspectral Earth observation",
          "Week 1 · Session 2",
          notebook="10_spectral_signatures_and_libraries.ipynb",
          subtitle="From three colours to 426 — what a continuous spectrum buys you",
-         week="Week 1 · 2–5 November 2026")
+         week="Week 1 · 9–12 November 2026")
 
 d.objectives([
     "Explain what makes a sensor *hyperspectral*, and why band count alone is not the definition",
@@ -135,7 +135,7 @@ d.figure("Why 30 m, and not 10 m",
          kicker="the trade-off",
          notes="Pre-empt the most common project mistake: planning a study that needs weekly "
                "hyperspectral coverage of a whole country. Tasked scenes, not wall-to-wall time "
-               "series. If anyone asks about sharpening to 10 m, that is week 4.")
+               "series. If anyone asks about sharpening to 10 m, that is 30_advanced_analytics, which is self-study.")
 
 d.figure("Tanager-1 open data: the course scenes",
          "12_processing_workflow/01_4_batch_processing_all_course_scenes.png",

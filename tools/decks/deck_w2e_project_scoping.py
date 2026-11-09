@@ -10,7 +10,7 @@ d = Deck("Project scoping and use case definition",
          "Week 2 · Session 5",
          notebook="16_scene_finder.ipynb",
          subtitle="From an idea to a scope you can actually deliver in three weeks",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 d.objectives([
     "Turn a broad idea into a problem statement with a named user and a named decision",
@@ -51,7 +51,7 @@ d.bullets("The *why hyperspectral* test", [
     "**\"Multispectral would do\"** is a creditable finding — write it down and pivot the added value",
 ], kicker="be honest early",
    notes="The evaluation rubric rewards this honesty under Validity and Creativity. A team that "
-         "discovers this in Week 4 has a crisis; a team that discovers it now has a design decision.")
+         "discovers this in the final week has a crisis; a team that discovers it now has a design decision.")
 
 d.section("2. Does the data exist?", "Tasked archives are sparse — check first")
 
@@ -119,7 +119,7 @@ d.bullets("Complementary data you should plan for", [
     "**Ancillary layers**: DEM, weather, infrastructure, administrative boundaries",
     ("Register for EnMAP **this week** if your project needs it — it is not an instant download", 1),
 ], kicker="do not rely on one source",
-   notes="Chase this: a team that registers in Week 4 will not get their data in time. The EnMAP mission "
+   notes="Chase this: a team that registers next week will not get their data in time. The EnMAP mission "
          "also publishes open example scenes that need no login, which we use in the QGIS session.")
 
 d.section("3. Plan the proof before the build", "Validation, risks, milestones")
@@ -148,15 +148,15 @@ d.table("Name your risks and your fallbacks now",
 
 d.table("Milestones between here and the final presentation",
         ["When", "Deliverable"],
-        [["Today, Week 2", "Scoping canvas complete, scenes identified and downloaded"],
-         ["Week 3, Tue–Wed", "Working method on one scene (project workshop)"],
-         ["Week 3, Thu 19 Nov", "Assignment W3: a validated map, plus the QA checklist"],
-         ["Week 4, Mon 23 Nov", "Refinement, uncertainty, error analysis"],
-         ["Week 4, Tue 24 Nov", "Pipeline, tests, product mock-up, rehearsal"],
-         ["Week 4, Thu 26 Nov", "Submission and final presentation"]],
-        col_widths=[1, 2], kicker="three weeks, no slack",
-        notes="Point at the Week 3 Thursday milestone: that is the first moment a team finds out whether "
-              "the scope was realistic. There is one week left to correct after it.")
+        [["Today, Thu 19 Nov", "Scoping canvas drafted, scenes identified and downloading"],
+         ["Mon 23 Nov", "Scoping canvas due"],
+         ["Tue 24 Nov", "Method applied to your own scene"],
+         ["Wed 25 Nov, pm", "Build afternoon — validated result, instructors on hand"],
+         ["Thu 26 Nov", "Submission in the morning, presentation in the afternoon"]],
+        col_widths=[1, 2], kicker="one week, no slack",
+        notes="Be blunt about the shape of this: one scheduled build afternoon, and five working days from "
+              "today to the presentation. That is why the canvas has to be small enough to finish. A team "
+              "still choosing a theme today is already behind.")
 
 d.bullets("A worked example, in the canvas's own words", [
     "**Problem:** coastal sabkha and shallow-water habitats along the Al Dhafra coast are not mapped "

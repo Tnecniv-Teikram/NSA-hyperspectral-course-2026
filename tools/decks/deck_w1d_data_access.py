@@ -8,7 +8,7 @@ d = Deck("Data access, visualisation and exploration",
          "Week 1 · Session 4",
          notebook="00_EO_data_quickstart_notebook.ipynb",
          subtitle="From a public catalogue to a spectrum on your screen",
-         week="Week 1 · 2–5 November 2026")
+         week="Week 1 · 9–12 November 2026")
 
 d.objectives([
     "Navigate a STAC catalogue: collection, item, asset",

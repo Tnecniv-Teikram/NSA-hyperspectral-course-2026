@@ -1,6 +1,6 @@
 # 🛰️ Space Academy 2026 — Hyperspectral Earth Observation
 
-**Participant handbook · four weeks · 2–26 November 2026**
+**Participant handbook · three weeks · 9–26 November 2026**
 
 Welcome. This page is the one you keep open. It tells you what to install, what happens each day, what
 you have to hand in, and where to look when something breaks.
@@ -140,85 +140,78 @@ confusion matrix — is taught from zero in a 20-minute primer before the first 
 
 ---
 
-## The four weeks
+## The three weeks
 
 Every week runs **Monday to Thursday**. There are no Friday sessions.
 Each day is roughly: lecture (1.5–2 h) · guided notebook (2–2.5 h) · your own work (1.5–2 h).
 
-### Week 1 · 2–5 Nov — onsite and online
-*Seeing the spectrum*
+### Week 1 · 9–12 Nov — seeing the spectrum
 
 | Day | Session | You work on | Homework |
 |---|---|---|---|
-| **Mon 2** | Orientation · Introduction to hyperspectral EO | environment setup · `00_EO_data_quickstart_notebook` | `ex_00` · quiz W1a · **notebook 09 if numpy is new to you** |
-| **Tue 3** | Spectral signatures, sensors and use cases | `10_spectral_signatures_and_libraries` · **field spectrometer session (2 h)** | finish notebook 10's "Your turn" |
-| **Wed 4** | Data access, visualization and exploration | one or two theme notebooks `01`–`06`, your choice · overlay your own field spectra on the course library | the matching `ex_01`–`ex_06` |
-| **Thu 5** | Preprocessing concepts | `11_preprocessing` — the fullest notebook of the week | quiz W1b · **start assignment W1** |
+| **Mon 9** | Kickoff and orientation · Course objectives, the mini project, the gIQ and course platforms | environment setup — get Colab or a local install working today | **notebook 09 if numpy is new to you** |
+| **Tue 10** | Introduction to hyperspectral EO · Spectral signatures, sensors and use cases | `10_spectral_signatures_and_libraries` | quiz W1a · finish notebook 10's "Your turn" |
+| **Wed 11** | Data access, visualization and exploration | `00_EO_data_quickstart`, then one or two theme notebooks `01`–`06`, your choice | the matching `ex_01`–`ex_06` · **pick your mini-project theme** |
+| **Thu 12** | Preprocessing concepts | `11_preprocessing` — the fullest notebook of the week | quiz W1b |
 
-The one week everyone is in the room. Bring a laptop you can install on, and use the instructors while they
-are physically next to you.
+Monday and Tuesday each carry two sessions, so they are full days. Get your environment working on Monday —
+it is the single thing most likely to cost you a day later.
 
-### Week 2 · 9–12 Nov — online
-*From cube to answer*
-
-| Day | Session | You work on | Homework |
-|---|---|---|---|
-| **Mon 9** | Image processing workflows | `12_processing_workflow` · `hsi_utils.py` | **assignment W1 due** |
-| **Tue 10** | Feature extraction and dimensionality reduction | `13_feature_extraction_dim_reduction` | quiz W2 |
-| **Wed 11** | Material discrimination and target detection | `14_material_discrimination_target_detection` — bring your Week 1 field spectra | — |
-| **Thu 12** | ML primer + classification · Project scoping | `15_classification_classical` · `16_scene_finder` + scoping canvas | **assignment W2 issued** · scoping canvas due Mon 16 |
-| *extra* | *(optional)* HyperCoast and QGIS desktop lab | `17_hypercoast_tanager_enmap` · `qgis_lab_hyperspectral.md` | — |
-
-### Week 3 · 16–19 Nov — online
-*GeoAI, and proving it works*
+### Week 2 · 16–19 Nov — from cube to answer
 
 | Day | Session | You work on | Homework |
 |---|---|---|---|
-| **Mon 16** | GeoAI methods for hyperspectral | reading + the lecture sections of `20_geoai_deep_learning` | quiz W3 · **scoping canvas due** |
-| **Tue 17** | AI-assisted classification and mapping | `20_geoai_deep_learning` — training and inference (~6 min runtime on CPU) | — |
-| **Wed 18** | Validation and accuracy assessment | `21_validation_accuracy_assessment` | **assignment W3 issued** |
-| **Thu 19** | Project workshop · interim feedback and QA | your own project (`templates/project_template.ipynb`) · peer review · 10-min interim presentation | **assignment W3 due at the review** |
+| **Mon 16** | Image processing workflows | `12_processing_workflow` · `hsi_utils.py` | — |
+| **Tue 17** | Feature extraction and dimensionality reduction | `13_feature_extraction_dim_reduction` | quiz W2 |
+| **Wed 18** | Material discrimination and target detection | `14_material_discrimination_target_detection` | — |
+| **Thu 19** | ML primer + classification · Project scoping and use case definition | `15_classification_classical` · `16_scene_finder` + your scoping canvas | **scoping canvas due Mon 23** |
 
-### Week 4 · 23–26 Nov — onsite and online
-*Refine, build, present*
+### Week 3 · 23–26 Nov — GeoAI, validation, and your project
 
-| Day | Session | You work on | Homework |
+| Day | Session | You work on | Project |
 |---|---|---|---|
-| **Mon 23** | Advanced analytics and refinement | `30_advanced_analytics` — change detection before lunch, uncertainty and scaling after | the biggest notebook of the course |
-| **Tue 24** | Final implementation and testing | `31_from_notebook_to_product` · then your own pipeline and tests | submission checklist issued |
-| **Wed 25** | Presentation preparation and rehearsal | your slides, timed and rehearsed | — |
-| **Thu 26** | **Final submission** · final presentations and feedback | 12-minute presentation + 5 minutes of questions | — |
+| **Mon 23** | GeoAI methods for hyperspectral | reading + the lecture sections of `20_geoai_deep_learning` | **scoping canvas due** · quiz W3 |
+| **Tue 24** | AI-assisted classification and mapping | `20_geoai_deep_learning` — training and inference (~6 min on CPU) | apply the method to your own scene |
+| **Wed 25** | Validation and accuracy assessment | `21_validation_accuracy_assessment` in the morning | **afternoon is project build time**, instructors on hand |
+| **Thu 26** | **Final submission and presentations** | — | morning: finalise and submit · afternoon: 12 minutes + 5 minutes of questions |
 
-A day-by-day run sheet with timings is in
-[`teaching_plan.md`](teaching_plan.md).
+A day-by-day run sheet with timings is in [`teaching_plan.md`](teaching_plan.md).
 
----
+### Material we will not cover in class
+
+It is all in this repository, and it is the natural next step if you want to go further:
+
+- `17_hypercoast_tanager_enmap` and [`qgis_lab_hyperspectral.md`](qgis_lab_hyperspectral.md) — interactive maps and the QGIS/EnMAP-Box desktop lab
+- `30_advanced_analytics` — change detection, uncertainty, harmonisation, scaling
+- `31_from_notebook_to_product` — packaging a notebook into a tested pipeline and an app
 
 ## What you hand in
 
-| | What | When | Worth |
-|---|---|---|---|
-| **W1** | Scene exploration report — individual | start of Week 2 (Mon 9 Nov) | 10 % |
-| **W2** | Material discrimination and classification mini-project — in pairs | start of Week 3 (Mon 16 Nov) | 15 % |
-| **W3** | A validated AI map — project team | at the interim review (Thu 19 Nov) | 15 % |
-| **Final** | Graduation project: a working, validated hyperspectral application | Thu 26 Nov | **60 %** |
+**One mini project. It is the whole assessment** — there are no graded weekly assignments.
 
-Briefs are in `assignments/`. Start with
-[`final_project_brief.md`](assignments/final_project_brief.md) in Week 1 — the
-project runs through the whole course, and the weekly assignments are deliberately steps towards it.
+| When | What |
+|---|---|
+| **Mon 9 Nov** | The mini project is introduced |
+| **Wed 11 Nov** | Pick your theme |
+| **Thu 19 Nov** | Scoping canvas drafted in the session — `templates/project_scoping_template.md` |
+| **Mon 23 Nov** | Scoping canvas due |
+| **Wed 25 Nov** | Build afternoon, with instructors on hand — `templates/project_template.ipynb` |
+| **Thu 26 Nov** | Submit in the morning, present in the afternoon |
 
-**Quizzes are ungraded.** They exist so you can find out what did not land, before it matters.
+Read [`assignments/final_project_brief.md`](assignments/final_project_brief.md) in week 1, not week 3 — the
+project runs through the whole course, and everything you do in the sessions feeds it.
 
-Everything you need for the project is in `templates/`: the scoping canvas, a
-project notebook skeleton, the QA checklist, the submission checklist, the presentation outline, and **the
-rubric you will actually be marked against** — read `evaluation_rubric.md` early, not the night before.
+You are marked with `templates/evaluation_rubric.md`: **Validity 30 · Relevance 20 · Impact 20 · Creativity 15
+· Presentation 15**. Read it early. Validity carries the most weight, which means an honest, properly validated
+result beats an impressive-looking one.
+
+`templates/` also holds the submission checklist and the presentation outline. **Quizzes are ungraded** — they
+exist so you can find out what did not land, before it matters.
 
 Two rules worth stating plainly:
 
 - **Do not submit raw HDF5 scenes.** List the scene IDs instead.
 - **AI coding assistants are allowed.** You must understand and be able to explain every line you submit.
-
----
 
 ## Difficulty, so you can plan your week
 
@@ -254,7 +247,7 @@ it is missing — about 1 GB each, so do it on a connection you trust.
 | Scene | Place | What it teaches |
 |---|---|---|
 | `20241215_185916_33_4001` | Malibu, California — Franklin fire scar | fire, change detection |
-| `20250123_185518_92_4001` | Santa Monica Mountains — after the Palisades fire | change detection (Week 4) |
+| `20250123_185518_92_4001` | Santa Monica Mountains — after the Palisades fire | change detection (self-study) |
 | `20250219_053251_31_4001` | Korba / Kusmunda coal mines, India | minerals, target detection, greenhouse gases |
 | `20250223_165546_32_4001` | Usulután, El Salvador — mangroves and estuary | classification, GeoAI, validation |
 | `20250407_035509_25_4001` | Ho Chi Minh City, Vietnam | urban, target detection |

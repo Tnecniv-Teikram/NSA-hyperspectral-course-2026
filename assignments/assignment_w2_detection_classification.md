@@ -2,6 +2,10 @@
 
 **Space Academy 2026 · Hyperspectral course · Week 2** · pairs · due at the start of Week 3 · 15 % of the course grade
 
+> **Not used in the 2026 three-week course.** Assessment is the mini project alone — see
+> [`final_project_brief.md`](final_project_brief.md). This brief is kept for reference and for a
+> future longer run, and is still a good self-directed exercise.
+
 **Goal:** apply feature extraction, spectral matching or detection, and supervised classification to one area, and
 measure what the hyperspectral bands add.
 **Builds on:** notebooks `13_feature_extraction_dim_reduction`, `14_material_discrimination_target_detection`, `15_classification_classical`.

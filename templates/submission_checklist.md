@@ -1,6 +1,6 @@
 # Final graduation project — submission checklist
 
-**Space Academy 2026 · Hyperspectral course · Week 4 — Final graduation project submission**
+**Space Academy 2026 · Hyperspectral course · Thursday 26 November — mini project submission**
 
 Submit **one folder (or repository) per team** named `team_<name>_hyperspectral_project/` containing:
 

@@ -8,7 +8,7 @@ d = Deck("Hyperspectral image processing workflows",
          "Week 2 · Session 1",
          notebook="12_processing_workflow.ipynb",
          subtitle="From a pile of cells to a pipeline you can rerun, batch and defend",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 d.objectives([
     "Describe the standard processing chain and the role of each step",
@@ -16,7 +16,7 @@ d.objectives([
     "Export analysis-ready products: a Cloud-Optimised GeoTIFF plus a provenance sidecar",
     "Batch-process many scenes and read the summary table like a quality analyst",
     "Process a full scene **tile by tile** with bounded memory, and know when to reach for dask",
-    "Apply the reproducibility checklist that the interim review will hold you to",
+    "Apply the reproducibility checklist your project submission will be held to",
 ], notes="This session is the hinge of the course: week 1 was about understanding the data, weeks 2–4 are about "
          "building something. Ask who has ever tried to rerun an analysis from three months ago and failed.")
 
@@ -65,7 +65,7 @@ d.bullets("Library code and notebook code", [
     "A notebook cannot be imported, scheduled, unit-tested or reviewed line by line",
     "**Rule of thumb:** if you have pasted it twice, it belongs in a module",
 ], kicker="where does code live?",
-   notes="Preview week 4: the same function is then called by the notebook, a command-line tool and a Streamlit app. "
+   notes="Preview 31_from_notebook_to_product (self-study): the same function is then called by the notebook, a command-line tool and a Streamlit app. "
          "Writing it once in a module is what makes that possible.")
 
 d.section("2. Anatomy of a pipeline", "Configuration, steps, gates, outputs")
@@ -96,7 +96,7 @@ d.bullets("Steps as functions, with a gate", [
     "Gates belong wherever an assumption could silently break downstream",
 ], kicker="fail loudly, fail early",
    notes="This is a transferable software habit: assert your assumptions at the boundary. "
-         "In week 4 the same idea returns as quality flags on the product and as pytest assertions.")
+         "In notebook 31 the same idea returns as quality flags on the product and as pytest assertions.")
 
 d.bullets("Logging instead of print", [
     "A pipeline that runs unattended needs a **time-stamped log**, on screen and in a file",
@@ -148,7 +148,7 @@ d.bullets("Idempotent re-runs", [
     "It also stops you silently overwriting the figure that is already in your report",
 ], kicker="safe to run again",
    notes="Ask who has ever lost a result by rerunning a cell. Idempotency is cheap insurance, and it is the "
-         "property that makes scheduling possible in week 4.")
+         "property that makes scheduling possible when you productionise it.")
 
 d.section("3. Scaling up", "Memory, tiles and where the time actually goes")
 
@@ -223,7 +223,7 @@ d.table("The reproducibility checklist", ["Practice", "How"], [
     ["Restart & Run All", "before every submission, on a clean kernel"],
     ["Relative paths", "hu.DATA_DIR and hu.OUTPUT_DIR, never /Users/yourname/…"],
 ], col_widths=[1.2, 3], kicker="eight habits",
-   notes="This table reappears as section A of templates/interim_qa_checklist.md in week 3. "
+   notes="This table reappears as section A of templates/interim_qa_checklist.md, your pre-submission self-check. "
          "Tell them the peer review will check it item by item, so adopting it now costs nothing later.")
 
 d.bullets("Determinism is testable", [
@@ -232,7 +232,7 @@ d.bullets("Determinism is testable", [
     "If a 'deterministic' step gives two answers, you have an unseeded random call or thread non-determinism",
     "Cheap to write, and it catches a class of bug that is otherwise invisible",
 ], kicker="prove it, do not assume it",
-   notes="This is the seed of the testing session in week 4, where the same idea becomes a regression test on "
+   notes="This is the seed of notebook 31 (self-study), where the same idea becomes a regression test on "
          "the product's mapped area.")
 
 d.handover("12_processing_workflow.ipynb", [
@@ -255,7 +255,7 @@ d.recap([
     "Reproducibility is a checklist, not a talent: seeds, versions, logs, relative paths",
 ], next_up="Session 2 — Feature extraction and dimensionality reduction: what to compute inside step 5",
    notes="End with the project instruction: build your analysis as run_pipeline(config) from day one. "
-         "At the interim review you should be able to regenerate every figure from a config and one command.")
+         "By submission you should be able to regenerate every figure from a config and one command.")
 
 d.references([
     "Wilson, G. et al. (2017). Good enough practices in scientific computing. PLOS Computational Biology 13, e1005510.",

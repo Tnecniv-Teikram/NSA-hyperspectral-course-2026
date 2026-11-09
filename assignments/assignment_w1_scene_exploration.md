@@ -2,6 +2,10 @@
 
 **Space Academy 2026 · Hyperspectral course · Week 1** · individual · due at the start of Week 2 · 10 % of the course grade
 
+> **Not used in the 2026 three-week course.** Assessment is the mini project alone — see
+> [`final_project_brief.md`](final_project_brief.md). This brief is kept for reference and for a
+> future longer run, and is still a good self-directed exercise.
+
 **Goal:** show that you can access, quality-check and interpret a hyperspectral scene.
 **Builds on:** notebooks `00`, `10_spectral_signatures_and_libraries`, `11_preprocessing`.
 

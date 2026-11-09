@@ -1,9 +1,11 @@
-# Final evaluation rubric
+# Mini project evaluation rubric
 
-**Space Academy 2026 · Hyperspectral course · Week 4 — Final evaluation and feedback**
+**Space Academy 2026 · Hyperspectral course · Thursday 26 November — final submission and presentation**
+
+The mini project is **100 % of the course grade**.
 
 The rubric uses the five criteria of the 813 Challenge (Impact, Creativity, Validity, Relevance, Presentation),
-refined for a course project. Each criterion is scored 1–4. The weights sum to 100.
+refined for the course mini project. Each criterion is scored 1–4. The weights sum to 100.
 
 | Criterion | Weight | 1 — Beginning | 2 — Developing | 3 — Proficient | 4 — Excellent |
 |-----------|:------:|---------------|----------------|----------------|---------------|
@@ -29,7 +31,7 @@ Team: ______________________   Evaluator: ______________________
 | Presentation (15) | | |
 | **Total** | | |
 
-**Feedback for the team (for the "Final evaluation and feedback" session):**
+**Feedback for the team (for the feedback round after the presentations):**
 - Keep:
 - Improve:
 - Next step if continuing towards incubation:

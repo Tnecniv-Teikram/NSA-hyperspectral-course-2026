@@ -12,7 +12,7 @@ d = Deck("Machine learning in 20 minutes",
          "Week 2 · Session 4",
          notebook="15_classification_classical.ipynb",
          subtitle="For multispectral analysts: the vocabulary is new, the workflow is not",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 d.objectives([
     "Map the machine-learning vocabulary onto the classification work you already do",

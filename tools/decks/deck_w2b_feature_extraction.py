@@ -10,7 +10,7 @@ d = Deck("Feature extraction and dimensionality reduction",
          "Week 2 · Session 2",
          notebook="13_feature_extraction_dim_reduction.ipynb",
          subtitle="From 352 redundant bands to 16 features you can defend",
-         week="Week 2 · 9–12 November 2026")
+         week="Week 2 · 16–19 November 2026")
 
 d.objectives([
     "Explain why neighbouring hyperspectral bands are redundant, and what the Hughes phenomenon costs you",

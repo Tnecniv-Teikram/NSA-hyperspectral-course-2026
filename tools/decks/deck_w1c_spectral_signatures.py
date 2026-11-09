@@ -10,7 +10,7 @@ d = Deck("Spectral signatures and sensor concepts",
          "Week 1 · Session 3",
          notebook="10_spectral_signatures_and_libraries.ipynb",
          subtitle="Why materials absorb where they do, and what the sensor does to that signal",
-         week="Week 1 · 2–5 November 2026")
+         week="Week 1 · 9–12 November 2026")
 
 d.objectives([
     "Explain the two physical mechanisms that produce absorption features in the 400–2500 nm range",
