@@ -132,6 +132,26 @@ jupyter lab
 **Then pick the "Hyperspectral course 2026" kernel inside every notebook.** This matters more than it looks —
 see the first entry under *When something breaks*.
 
+**Coming back in a new terminal?** You only create the environment once. After that, every session starts
+with the activate line alone:
+
+```bash
+source ~/venvs/hsi2026/bin/activate          # Windows: %USERPROFILE%\venvs\hsi2026\Scripts\activate
+jupyter lab
+```
+
+Your prompt gains a `(hsi2026)` prefix when it worked. `which python` should point inside `~/venvs/hsi2026`.
+
+**One environment serves both repositories.** The theme notebooks `00`–`06` in `Starting_notebooks` are
+standalone — they do not import `hsi_utils` — and they need only one package this environment lacks,
+`stackstac`. Their own `%pip install` cell fetches it, or install it once with `pip install stackstac`. The
+second repository's README describes a `.venv` inside its own folder; ignore that if you have the course
+environment, or you will end up with two environments and two kernels to confuse.
+
+**After any `%pip install` cell, restart the kernel** (*Kernel ▸ Restart*) before running the rest of the
+notebook. Python keeps the already-imported version of a package otherwise, and the error it produces looks
+nothing like the cause.
+
 Three local gotchas:
 
 - **Never put the virtual environment inside OneDrive, Dropbox or iCloud.** Sync corrupts it, and it holds tens
