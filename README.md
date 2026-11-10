@@ -38,7 +38,7 @@ NSA-hyperspectral-course-2026/
 │
 ├── exercises/                   one exercise set per challenge theme (with solutions)
 ├── quizzes/                     four ungraded lecture quizzes (with answers)
-├── assignments/                 the three weekly assignments + the final project brief
+├── assignments/                 the mini project brief + three optional homework briefs
 ├── templates/                   scoping canvas, project skeleton, checklists, rubric
 ├── slides/                      one lecture deck per session
 ├── data/                        land-cover labels, spectral library, EnMAP subset, scene index
@@ -46,14 +46,37 @@ NSA-hyperspectral-course-2026/
 └── tests/  tools/               test suite and the scripts that build the material
 ```
 
-**The Week 1 theme notebooks are in a separate repository.** The six challenge-theme notebooks `00`–`06`
-live in [`813-hyperspectral-hackathon`](https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon). Clone it *beside* this one, named `Starting_notebooks`, so
-the relative links resolve:
+### The theme notebooks live in a second repository — you do not have to clone it
+
+Notebook `00` (the data quickstart) and the six challenge-theme notebooks `01`–`06` are in
+[`813-hyperspectral-hackathon`](https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon), the same
+repository the Arab Youth Space Hackathon 813 Challenge uses.
+
+**Every link to them in this repository is a full GitHub link, and each of those notebooks opens in Colab from
+its own badge.** You can take the whole course by clicking links — nothing here breaks if you never download
+that second repository.
+
+Clone it only if you work locally and want the theme notebooks offline. If you do, put it **beside** this
+repository, never inside it:
 
 ```bash
-cd ..        # next to this repository
+cd ..        # the folder that holds this repository
 git clone https://github.com/Tnecniv-Teikram/813-hyperspectral-hackathon.git Starting_notebooks
 ```
+
+so you end up with two folders side by side:
+
+```
+your-course-folder/
+├── NSA-hyperspectral-course-2026/   this repository — the method
+└── Starting_notebooks/              the theme notebooks, and the Tanager scenes they download
+```
+
+*Beside*, for two reasons. Git treats a repository cloned **inside** another one as an "embedded repository":
+it will not track the inner folder's contents, and `git add` on the outer repository warns and records a
+broken pointer instead. And `hsi_utils` looks in sibling folders for the Tanager `.h5` scenes, so a sibling
+clone means both repositories share one ~11 GB download instead of two. The folder name is only a convention
+— `hsi_utils` finds any sibling folder that contains scene files, whatever you called it.
 
 Two repositories, two jobs. **`Starting_notebooks`** gets you to your first hyperspectral image and gives you
 one notebook per application theme. **This** repository is the method: everything from preprocessing to a

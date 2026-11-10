@@ -17,8 +17,13 @@ All material uses real **Planet Tanager** hyperspectral imagery (426 bands, 380�
 ## Setup, data and the starter notebooks
 
 All participant-facing setup — Colab, the local install, the kernel registration, the proxy CA bundle,
-how scenes are fetched, and cloning the theme notebooks as `Starting_notebooks` — is in
+how scenes are fetched, and the optional sibling clone of the theme notebooks — is in
 [`README.md`](README.md). It is the page to send students to; keep edits there rather than here.
+
+**Participants do not need the second repository.** Every cross-repository link in this material is a full
+GitHub link and every theme notebook carries its own Colab badge, so the `Starting_notebooks` clone is an
+offline convenience, not a prerequisite. If someone clones it anyway, it goes *beside* this repository, not
+inside — a clone inside this one becomes an embedded repository that git will not track.
 
 ---
 
