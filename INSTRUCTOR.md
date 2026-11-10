@@ -176,6 +176,12 @@ show matches what students run.
 - `python tools/preview_deck.py slides/<deck>.pptx` renders a deck to PNG contact sheets in
   `slides/previews/` so you can check layout without opening PowerPoint.
 - `python tools/lint_decks.py` checks every deck for overflowing text, oversized tables and missing notes.
+- **PDF copies of the decks** are what the repository publishes — the `.pptx` files are gitignored. Rebuild
+  them with `tools/export_slides_pdf.bas`, a PowerPoint macro: open any deck from `slides/`, then
+  Tools ▸ Macro ▸ Visual Basic Editor, Insert ▸ Module, paste the file and run `ExportAllDecksToPDF`.
+  It takes the output folder from the open presentation, so there is nothing to edit. A macro rather than
+  a script because PowerPoint for Mac ignores the AppleScript PDF-export verb, Keynote's `.pptx` import
+  blocks on a dialog, and the decks use Calibri and Consolas, which only Office has.
 
 ## Data
 
