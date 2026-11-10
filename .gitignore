@@ -14,7 +14,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
-# Slide decks. The .pptx files (64 MB) are never committed: they regenerate
+# Slide decks. The .pptx files (31 MB) are never committed: they regenerate
 # with  python tools/extract_figures.py  then  python tools/decks/deck_*.py
 # The PDF exports in slides/ ARE committed, so participants and co-instructors
 # can read the decks without PowerPoint and without a 64 MB download.
